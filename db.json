@@ -1,0 +1,376 @@
+{
+  "users": [
+    {
+      "name": "admin",
+      "name_eng": "admin",
+      "lastName": "admin",
+      "lastName_eng": "admin",
+      "agency": "admin",
+      "position": "superAdmin",
+      "email": "superadmin1@gmail.com",
+      "mobile": "123456789",
+      "phone": "123456789",
+      "password": "123456789",
+      "role": 1,
+      "updatedAt": "2024-08-01T12:37:57.665Z",
+      "id": 1
+    },
+    {
+      "name": "newUser",
+      "name_eng": "newUser",
+      "lastName": "newUser",
+      "lastName_eng": "newUser",
+      "agency": "newUser",
+      "position": "newUser",
+      "email": "newUser@gmail.com",
+      "mobile": "123456789",
+      "phone": "123456789",
+      "password": "$2b$10$pZ.RPakVFlokHh/5m8Vag.evpD62bcHbxfmDTP6IlQNs9WZXXSDf2",
+      "role": 1,
+      "createdAt": "2024-07-31T16:12:57.073Z",
+      "updatedAt": "2024-07-31T16:12:57.073Z",
+      "id": 2
+    },
+    {
+      "name": "newUser3",
+      "name_eng": "newUser",
+      "lastName": "newUser",
+      "lastName_eng": "newUser",
+      "agency": "newUser",
+      "position": "newUser",
+      "email": "newUser3@gmail.com",
+      "mobile": "123456789",
+      "phone": "123456789",
+      "password": "$2b$10$hvQTu/b3mxNz77/nrqOUiOe78qP5UqQa.v5mh2mlsLFpqbN7t1gzu",
+      "role": 2,
+      "createdAt": "2024-07-31T16:22:34.803Z",
+      "updatedAt": "2024-07-31T16:22:34.803Z",
+      "id": 4,
+      "file": "/Users/test/Documents/projects/task/public/uploads/images.jpeg"
+    },
+    {
+      "name": "newUser3",
+      "name_eng": "newUser",
+      "lastName": "newUser",
+      "lastName_eng": "newUser",
+      "agency": "newUser",
+      "position": "newUser",
+      "email": "newUser3@gmail.com",
+      "mobile": "123456789",
+      "phone": "123456789",
+      "password": "$2b$10$IY8nwF5Of69rYT6uitYePe01Cvr0BgjP5qgSYMYhUe8AuV7tQM2qC",
+      "role": 2,
+      "createdAt": "2024-08-01T12:35:11.557Z",
+      "updatedAt": "2024-08-01T12:35:11.557Z",
+      "id": 5
+    },
+    {
+      "name": "newUser3",
+      "name_eng": "newUser",
+      "lastName": "newUser",
+      "lastName_eng": "newUser",
+      "agency": "newUser",
+      "position": "newUser",
+      "email": "newUser3@gmail.com",
+      "mobile": "123456789",
+      "phone": "123456789",
+      "password": "$2b$10$j2zCz/GjKQrkPVav/7VQieJ1lmiu8.ChQej9ntsg.cpcCJJkXIXnW",
+      "role": 2,
+      "createdAt": "2024-08-01T12:35:20.546Z",
+      "updatedAt": "2024-08-01T12:35:20.546Z",
+      "id": 6
+    },
+    {
+      "name": "newUser4",
+      "name_eng": "newUser",
+      "lastName": "newUser",
+      "lastName_eng": "newUser",
+      "agency": "newUser",
+      "position": "newUser",
+      "email": "newUser3@gmail.com",
+      "mobile": "123456789",
+      "phone": "123456789",
+      "password": "$2b$10$8byia9tPa2VC3/Ttzhxe6ulf54pwpazGLJ2IrbltjGZFInE94ThnC",
+      "role": 2,
+      "createdAt": "2024-08-01T12:35:37.371Z",
+      "updatedAt": "2024-08-01T12:35:37.371Z",
+      "id": 7
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "administrator",
+      "description": "main",
+      "permissions": {
+        "users": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "tabs": [
+          1,
+          2,
+          3
+        ],
+        "roles": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "name": "some roleeeee11111",
+      "description": "test",
+      "permissions": {
+        "users": [
+          1,
+          2,
+          3
+        ],
+        "tabs": [
+          1,
+          2,
+          3
+        ]
+      },
+      "updatedAt": "2024-08-01T12:29:57.114Z",
+      "id": 2
+    },
+    {
+      "name": "some role222",
+      "description": "test",
+      "permissions": [],
+      "createdAt": "2024-08-01T12:20:57.655Z",
+      "updatedAt": "2024-08-01T12:20:57.655Z",
+      "id": 3
+    }
+  ],
+  "permissions": {
+    "users": [
+      {
+        "id": 1,
+        "key": "add",
+        "name": "მომხმარებლის დამატება"
+      },
+      {
+        "id": 2,
+        "key": "delete",
+        "name": "მომხმარებლის წაშლა"
+      },
+      {
+        "id": 3,
+        "key": "update",
+        "name": "მომხმარებლის რედაქტირება"
+      },
+      {
+        "id": 4,
+        "key": "read only",
+        "name": "მხოლოდ დათვალიერება"
+      }
+    ],
+    "tabs": [
+      {
+        "id": 1,
+        "key": "add",
+        "name": "ჩანართის დამატება"
+      },
+      {
+        "id": 2,
+        "key": "add_archive",
+        "name": "ჩანართის არქივის დამატება"
+      },
+      {
+        "id": 3,
+        "key": "edit",
+        "name": "ჩანართის რედაქტირება"
+      },
+      {
+        "id": 4,
+        "key": "delete",
+        "name": "ჩანართის წაშლა"
+      },
+      {
+        "id": 5,
+        "key": "read only",
+        "name": "ჩანართის დათვალიერება"
+      }
+    ],
+    "roles": [
+      {
+        "id": 1,
+        "key": "add",
+        "name": "როლის დამატება"
+      },
+      {
+        "id": 2,
+        "key": "update",
+        "name": "როლის რედაქტირება"
+      },
+      {
+        "id": 3,
+        "key": "delete",
+        "name": "როლის წაშლა"
+      },
+      {
+        "id": 4,
+        "key": "read only",
+        "name": "დათვალიერება"
+      }
+    ]
+  },
+  "tabs": [
+    {
+      "name": "test",
+      "name_eng": "",
+      "name_code": "dsds",
+      "is_active": "false",
+      "document_level_id": 1,
+      "updatedAt": "2024-07-31T13:29:54.350Z",
+      "id": 1
+    },
+    {
+      "name": "test3",
+      "name_eng": "",
+      "name_code": "dsds",
+      "is_archive": "false",
+      "document_level_id": 4,
+      "valide_period": "2023-08-29 - 2023-08-30",
+      "confirm_date": "2023-08-29",
+      "createdAt": "2024-01-08T14:19:59.139Z",
+      "updatedAt": "2024-01-08T14:19:59.139Z",
+      "id": 2
+    },
+    {
+      "name": "test3",
+      "name_eng": "",
+      "name_code": "dsds",
+      "is_archive": "false",
+      "document_level_id": 4,
+      "valide_period": "2023-08-29 - 2023-08-30",
+      "confirm_date": "2023-08-29",
+      "createdAt": "2024-01-08T16:13:28.177Z",
+      "updatedAt": "2024-01-08T16:13:28.177Z",
+      "id": 3
+    },
+    {
+      "name": "test3",
+      "name_eng": "",
+      "is_archive": "false",
+      "document_level_id": 4,
+      "valide_period": "2023-08-29 - 2023-08-30",
+      "confirm_date": "2023-08-29",
+      "createdAt": "2024-01-08T16:43:29.479Z",
+      "updatedAt": "2024-01-08T16:43:29.479Z",
+      "name_code": "test3",
+      "id": 4
+    },
+    {
+      "name": "test3",
+      "name_eng": "",
+      "is_archive": "false",
+      "document_level_id": 4,
+      "valide_period": "2023-08-29 - 2023-08-30",
+      "confirm_date": "2023-08-29",
+      "createdAt": "2024-01-08T16:45:30.553Z",
+      "updatedAt": "2024-01-08T16:45:30.553Z",
+      "name_code": "aHjMcSAagc",
+      "id": 5
+    },
+    {
+      "name": "test3",
+      "name_eng": "",
+      "is_archive": "false",
+      "document_level_id": 4,
+      "valide_period": "2023-08-29 - 2023-08-30",
+      "confirm_date": "2023-08-29",
+      "createdAt": "2024-01-08T16:45:47.172Z",
+      "updatedAt": "2024-01-08T16:45:47.172Z",
+      "name_code": "OSOE2 SZOA",
+      "id": 6
+    },
+    {
+      "name": "test3",
+      "name_eng": "",
+      "is_archive": "false",
+      "document_level_id": 4,
+      "valide_period": "2023-08-29 - 2023-08-30",
+      "confirm_date": "2023-08-29",
+      "createdAt": "2024-01-08T17:27:35.745Z",
+      "updatedAt": "2024-01-08T17:27:35.745Z",
+      "name_code": "7OBEADUE4P",
+      "id": 7
+    },
+    {
+      "name": "test200",
+      "name_eng": "",
+      "name_code": "U0 WEG8RSB",
+      "is_archive": "false",
+      "document_level_id": 4,
+      "valide_period": "2023-08-29 - 2023-08-30",
+      "createdAt": "2024-07-31T13:30:34.887Z",
+      "updatedAt": "2024-07-31T13:30:34.887Z",
+      "id": 8
+    },
+    {
+      "name": "test2003",
+      "name_eng": "",
+      "name_code": "SCEGWYXU3E",
+      "document_level_id": 4,
+      "valide_period": "2023-08-29 - 2023-08-30",
+      "createdAt": "2024-07-31T13:41:47.075Z",
+      "updatedAt": "2024-07-31T13:41:47.075Z",
+      "id": 9
+    },
+    {
+      "name": "test200",
+      "name_eng": "",
+      "name_code": "WBBMLOS6EA",
+      "is_archive": "false",
+      "document_level_id": 4,
+      "valide_period": "2023-08-29 - 2023-08-30",
+      "createdAt": "2024-08-01T12:04:29.168Z",
+      "updatedAt": "2024-08-01T12:04:29.168Z",
+      "id": 10
+    },
+    {
+      "name": "გელა",
+      "name_eng": "",
+      "name_code": "dsds",
+      "is_active": "false",
+      "document_level_id": 1,
+      "updatedAt": "2024-08-01T12:20:09.288Z",
+      "id": 11
+    }
+  ],
+  "document_level": [
+    {
+      "id": 1,
+      "name": "საწყისი"
+    },
+    {
+      "id": 2,
+      "name": "მაღალი"
+    },
+    {
+      "id": 3,
+      "name": "ეროვნული"
+    }
+  ],
+  "agency": [
+    {
+      "id": 1,
+      "name": "ციფრული მმართველობის სააგენტო"
+    },
+    {
+      "id": 2,
+      "name": "საჯარო რეესტრის ეროვნული სააგენტო"
+    },
+    {
+      "id": 3,
+      "name": "სახელმწიფო სერვისების განვითარების სააგენტო"
+    }
+  ]
+}
