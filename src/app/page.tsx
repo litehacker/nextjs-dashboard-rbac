@@ -18,6 +18,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { User } from "lucide-react";
 import { PasswordInput } from "./components/password-input";
+import { login } from "@/actions/login";
+import { LoginFormWrapperClient } from "./components/form";
 
 export default async function RootPage() {
   return (
@@ -39,9 +41,9 @@ export default async function RootPage() {
           </Link>
         </div>
       </header>
-      <form className="flex flex-col gap-6 items-center">
-        <h1 className="font-medium">ავტორიზაცია</h1>
-        <Card className="w-full max-w-md">
+      <h1 className="font-medium pb-6">ავტორიზაცია</h1>
+      <Card className="w-full max-w-md">
+        <LoginFormWrapperClient>
           <CardHeader className="text-center">
             <div className="flex justify-center">
               <div className="bg-[#F5F8FF] p-3 rounded-[10px]">
@@ -68,8 +70,8 @@ export default async function RootPage() {
               შესვლა
             </Button>
           </CardFooter>
-        </Card>
-      </form>
+        </LoginFormWrapperClient>
+      </Card>
     </div>
   );
 }
