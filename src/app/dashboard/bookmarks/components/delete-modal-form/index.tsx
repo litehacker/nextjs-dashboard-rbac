@@ -18,7 +18,7 @@ export const DeleteModalForm = ({
         </h1>
       </div>
       <form className="flex justify-between py-4 gap-[10px]" action={action}>
-        <Link href="/dashboard/bookmarks">
+        <Link href="/dashboard/bookmarks" replace={true}>
           <Button variant={"secondary"}>არა</Button>
         </Link>
         <Button variant={"outline"} type="submit">

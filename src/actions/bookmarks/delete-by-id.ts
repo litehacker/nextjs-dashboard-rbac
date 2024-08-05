@@ -1,5 +1,8 @@
 "use server";
+
+import { redirect } from "next/navigation";
+
 export const deleteBookmarkById = async (id: string) => {
   console.log("deleting", { id: id });
-  return null;
+  redirect("/dashboard/bookmarks");
 };
