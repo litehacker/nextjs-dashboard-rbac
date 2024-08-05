@@ -7,7 +7,7 @@ export const DashboardHomeIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1007_11151)">
+      <g clipPath="url(#clip0_1007_11151)">
         <path
           d="M29.1801 0H13.5442C9.9173 0 6.9771 2.93493 6.9771 6.55534V22.1632C6.9771 25.7836 9.9173 28.7186 13.5442 28.7186H29.1801C32.8071 28.7186 35.7473 25.7836 35.7473 22.1632V6.55534C35.7473 2.93493 32.8071 0 29.1801 0Z"
           fill="url(#paint0_linear_1007_11151)"
@@ -125,7 +125,7 @@ export const DashboardHomeIcon = () => {
           gradientTransform="translate(16.9454 15.5456) rotate(-16.4321) scale(26.3213 10.7755)"
         >
           <stop stopColor="#1249FF" />
-          <stop offset="1" stopColor="#CCD7F6" stop-opacity="0" />
+          <stop offset="1" stopColor="#CCD7F6" stopOpacity="0" />
         </radialGradient>
         <linearGradient
           id="paint4_linear_1007_11151"
@@ -135,8 +135,8 @@ export const DashboardHomeIcon = () => {
           y2="25.6586"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
-          <stop offset="0.28" stopColor="white" stop-opacity="0.5" />
+          <stop stopColor="white" stopOpacity="0" />
+          <stop offset="0.28" stopColor="white" stopOpacity="0.5" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_1007_11151"
@@ -160,12 +160,12 @@ export const DashboardHomeIcon = () => {
           y2="20.8527"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#EFEEFF" stop-opacity="0" />
-          <stop offset="0.08" stopColor="#EFEEFF" stop-opacity="0.04" />
-          <stop offset="0.23" stopColor="#F1F0FF" stop-opacity="0.14" />
-          <stop offset="0.41" stopColor="#F3F3FF" stop-opacity="0.3" />
-          <stop offset="0.62" stopColor="#F7F6FF" stop-opacity="0.53" />
-          <stop offset="0.86" stopColor="#FBFBFF" stop-opacity="0.81" />
+          <stop stopColor="#EFEEFF" stopOpacity="0" />
+          <stop offset="0.08" stopColor="#EFEEFF" stopOpacity="0.04" />
+          <stop offset="0.23" stopColor="#F1F0FF" stopOpacity="0.14" />
+          <stop offset="0.41" stopColor="#F3F3FF" stopOpacity="0.3" />
+          <stop offset="0.62" stopColor="#F7F6FF" stopOpacity="0.53" />
+          <stop offset="0.86" stopColor="#FBFBFF" stopOpacity="0.81" />
           <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
@@ -188,12 +188,12 @@ export const DashboardHomeIcon = () => {
           y2="19.9485"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
-          <stop offset="0.08" stopColor="white" stop-opacity="0.04" />
-          <stop offset="0.23" stopColor="white" stop-opacity="0.14" />
-          <stop offset="0.41" stopColor="white" stop-opacity="0.3" />
-          <stop offset="0.62" stopColor="white" stop-opacity="0.53" />
-          <stop offset="0.86" stopColor="white" stop-opacity="0.81" />
+          <stop stopColor="white" stopOpacity="0" />
+          <stop offset="0.08" stopColor="white" stopOpacity="0.04" />
+          <stop offset="0.23" stopColor="white" stopOpacity="0.14" />
+          <stop offset="0.41" stopColor="white" stopOpacity="0.3" />
+          <stop offset="0.62" stopColor="white" stopOpacity="0.53" />
+          <stop offset="0.86" stopColor="white" stopOpacity="0.81" />
           <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient

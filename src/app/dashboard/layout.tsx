@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { DashboardNavigation } from "./components/navigation";
+import Link from "next/link";
 
 export default async function DashboardLayout({
   children,
