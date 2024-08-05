@@ -18,7 +18,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { User } from "lucide-react";
 import { PasswordInput } from "./components/password-input";
-import { login } from "@/actions/login";
 import { LoginFormWrapperClient } from "./components/form";
 
 export default async function RootPage() {
@@ -44,14 +43,12 @@ export default async function RootPage() {
       <h1 className="font-medium pb-6">ავტორიზაცია</h1>
       <Card className="w-full max-w-md">
         <LoginFormWrapperClient>
-          <CardHeader className="text-center">
-            <div className="flex justify-center">
-              <div className="bg-[#F5F8FF] p-3 rounded-[10px]">
-                <User color="#1F5EDD" />
-              </div>
+          <div className="flex justify-center">
+            <div className="bg-[#F5F8FF] p-3 rounded-[10px]">
+              <User color="#1F5EDD" />
             </div>
-          </CardHeader>
-          <CardContent className="space-y-4">
+          </div>
+          <CardContent className="space-y-4 p-0">
             <div className="flex flex-col text-center gap-2">
               <p className="text-sm font-medium">სახელი და პაროლი</p>
               <p className="text-sm text-muted-foreground">
@@ -60,13 +57,20 @@ export default async function RootPage() {
               </p>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">მომხმარებელი</Label>
-              <Input id="email" placeholder="ელ.ფოსტა ან მობილური" />
+              <Label htmlFor="username">მომხმარებელი</Label>
+              <Input
+                id="username"
+                name="username"
+                placeholder="ელ.ფოსტა ან მობილური"
+              />
             </div>
             <PasswordInput />
           </CardContent>
-          <CardFooter>
-            <Button className="w-full bg-blue-500 text-white" type="submit">
+          <CardFooter className="p-0 flex w-full">
+            <Button
+              className="flex w-full bg-blue-500 text-white"
+              type="submit"
+            >
               შესვლა
             </Button>
           </CardFooter>

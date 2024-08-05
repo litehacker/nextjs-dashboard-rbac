@@ -4,9 +4,12 @@ import { response } from "@/util/response.util";
 
 export async function POST(request: Request) {
   const { username, password } = await request.json();
+  console.log("Logging in...", { username, password });
 
   try {
+    // TODO: Change `username` to `email` if we can't use the username!
     const user = await axiosInstance.get(`users?email=${username}`);
+
     const match = await verifyPassword(password, user.data[0].password);
     if (!match) {
       const token = generateToken(user.data[0]);

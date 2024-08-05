@@ -11,6 +11,7 @@ export const PasswordInput = () => {
         <Label htmlFor="password">პაროლი</Label>
         <Input
           id="password"
+          name="password"
           type={!showPassword ? "password" : "text"}
           placeholder="პაროლი"
         />
