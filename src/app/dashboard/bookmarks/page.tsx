@@ -11,7 +11,7 @@ import {
 import { FolderCard } from "../components/folder-card";
 import { FilterBookmarks } from "../components/filter-bookmarks";
 
-export default async function Dashboard() {
+export default async function Bookmarks() {
   return (
     <>
       <header className="flex items-center justify-between pb-6 pt-[10px]">
