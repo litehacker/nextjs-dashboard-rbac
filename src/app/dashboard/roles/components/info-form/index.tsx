@@ -1,12 +1,10 @@
-"use client";
+"use server";
 
-import { useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CircleCheckIcon, X } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   Accordion,
@@ -63,43 +61,9 @@ type BookmarkPermission = {
   description: string;
 };
 
-export default function AddRoleForm({
-  action,
-}: {
-  action: string | ((formData: FormData) => void) | undefined;
-}) {
-  const [selectedBookmarkPermissions, setSelectedBookmarkPermissions] =
-    useState<BookmarkPermission["value"][]>([]);
-  const [selectedUserPermissions, setSelectedUserPermissions] = useState<
-    UserPermission["value"][]
-  >([]);
-  const handleBookmarkPermissionChange = useCallback(
-    (permission: "create_record" | "edit_record" | "delete_record") => {
-      if (selectedBookmarkPermissions.includes(permission)) {
-        setSelectedBookmarkPermissions(
-          selectedBookmarkPermissions.filter((p) => p !== permission)
-        );
-      } else {
-        setSelectedBookmarkPermissions([
-          ...selectedBookmarkPermissions,
-          permission,
-        ]);
-      }
-    },
-    [selectedBookmarkPermissions]
-  );
-  const handleUserPermissionChange = useCallback(
-    (permission: "create_user" | "edit_user" | "delete_user") => {
-      if (selectedUserPermissions.includes(permission)) {
-        setSelectedUserPermissions(
-          selectedUserPermissions.filter((p) => p !== permission)
-        );
-      } else {
-        setSelectedUserPermissions([...selectedUserPermissions, permission]);
-      }
-    },
-    [selectedUserPermissions]
-  );
+export default async function InfoRoleForm() {
+  const selectedBookmarkPermissions = ["create_record"];
+  const selectedUserPermissions = ["create_user"];
 
   return (
     <div className="w-full max-w-3xl mx-auto">
@@ -110,9 +74,8 @@ export default function AddRoleForm({
               <X />
             </Button>
           </Link>
-          <h1 className="text-xl font-semibold">როლის დამატება</h1>
+          <h1 className="text-xl font-semibold">როლის დეტალები</h1>
         </div>
-        <Button>შენახვა</Button>
       </div>
       <form className="space-y-4">
         <div>
@@ -199,10 +162,8 @@ export default function AddRoleForm({
                           </div>
                           <Checkbox
                             checked={checked}
-                            onCheckedChange={() =>
-                              handleBookmarkPermissionChange(permission.value)
-                            }
                             className="text-blue-600"
+                            disabled
                           />
                         </div>
                       </div>
@@ -272,10 +233,8 @@ export default function AddRoleForm({
                           </div>
                           <Checkbox
                             checked={checked}
-                            onCheckedChange={() =>
-                              handleUserPermissionChange(permission.value)
-                            }
                             className="text-blue-600"
+                            disabled
                           />
                         </div>
                       </div>

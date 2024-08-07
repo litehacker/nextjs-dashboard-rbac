@@ -12,28 +12,14 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import {
-  ArrowUpDown,
-  ChevronDown,
-  Info,
-  MoreHorizontal,
-  Pencil,
-  Trash,
-  Users,
-} from "lucide-react";
+import { Info, Pencil, Trash, Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
 import {
   Table,
   TableBody,
@@ -43,8 +29,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useState } from "react";
+import Link from "next/link";
 
-const data: Payment[] = [
+const data: Role[] = [
   {
     id: "m5gr84i9",
     name: "316",
@@ -77,14 +64,14 @@ const data: Payment[] = [
   },
 ];
 
-export type Payment = {
+export type Role = {
   id: string;
   name: string;
   description: string;
   usersAmount: number;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Role>[] = [
   {
     accessorKey: "name",
     header: ({ column }) => {
@@ -123,19 +110,33 @@ export const columns: ColumnDef<Payment>[] = [
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original;
+      const role = row.original;
 
       return (
-        <div className="flex w-full justify-end">
-          <Button variant="ghost" className="">
-            <Info />
-          </Button>
-          <Button variant="ghost" className="">
-            <Pencil />
-          </Button>
-          <Button variant="ghost" className="">
-            <Trash />
-          </Button>
+        <div className="flex justify-end w-full">
+          <div className="flex gap-6 shadow px-3 py-1.5 rounded-md">
+            <Link
+              href={"/dashboard/roles/info/" + role.id + "?modal=true"}
+              className="p-2"
+              replace
+            >
+              <Info size={16} />
+            </Link>
+            <Link
+              href={"/dashboard/roles/edit/" + role.id + "?modal=true"}
+              className="p-2"
+              replace
+            >
+              <Pencil size={16} />
+            </Link>
+            <Link
+              href={"/dashboard/roles/delete/" + role.id + "?modal=true"}
+              className="p-2"
+              replace
+            >
+              <Trash size={16} />
+            </Link>
+          </div>
         </div>
       );
     },

@@ -1,12 +1,12 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CircleCheckIcon, X } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   Accordion,
@@ -63,7 +63,7 @@ type BookmarkPermission = {
   description: string;
 };
 
-export default function AddRoleForm({
+export default function EditRoleForm({
   action,
 }: {
   action: string | ((formData: FormData) => void) | undefined;
@@ -73,33 +73,31 @@ export default function AddRoleForm({
   const [selectedUserPermissions, setSelectedUserPermissions] = useState<
     UserPermission["value"][]
   >([]);
-  const handleBookmarkPermissionChange = useCallback(
-    (permission: "create_record" | "edit_record" | "delete_record") => {
-      if (selectedBookmarkPermissions.includes(permission)) {
-        setSelectedBookmarkPermissions(
-          selectedBookmarkPermissions.filter((p) => p !== permission)
-        );
-      } else {
-        setSelectedBookmarkPermissions([
-          ...selectedBookmarkPermissions,
-          permission,
-        ]);
-      }
-    },
-    [selectedBookmarkPermissions]
-  );
-  const handleUserPermissionChange = useCallback(
-    (permission: "create_user" | "edit_user" | "delete_user") => {
-      if (selectedUserPermissions.includes(permission)) {
-        setSelectedUserPermissions(
-          selectedUserPermissions.filter((p) => p !== permission)
-        );
-      } else {
-        setSelectedUserPermissions([...selectedUserPermissions, permission]);
-      }
-    },
-    [selectedUserPermissions]
-  );
+  const handleBookmarkPermissionChange = (
+    permission: "create_record" | "edit_record" | "delete_record"
+  ) => {
+    if (selectedBookmarkPermissions.includes(permission)) {
+      setSelectedBookmarkPermissions(
+        selectedBookmarkPermissions.filter((p) => p !== permission)
+      );
+    } else {
+      setSelectedBookmarkPermissions([
+        ...selectedBookmarkPermissions,
+        permission,
+      ]);
+    }
+  };
+  const handleUserPermissionChange = (
+    permission: "create_user" | "edit_user" | "delete_user"
+  ) => {
+    if (selectedUserPermissions.includes(permission)) {
+      setSelectedUserPermissions(
+        selectedUserPermissions.filter((p) => p !== permission)
+      );
+    } else {
+      setSelectedUserPermissions([...selectedUserPermissions, permission]);
+    }
+  };
 
   return (
     <div className="w-full max-w-3xl mx-auto">
@@ -110,7 +108,7 @@ export default function AddRoleForm({
               <X />
             </Button>
           </Link>
-          <h1 className="text-xl font-semibold">როლის დამატება</h1>
+          <h1 className="text-xl font-semibold">როლის ჩასწორება</h1>
         </div>
         <Button>შენახვა</Button>
       </div>
