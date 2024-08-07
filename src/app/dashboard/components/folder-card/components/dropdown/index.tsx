@@ -22,17 +22,21 @@ export const FolderDropdown = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[248px]" side="left">
         <DropdownMenuItem className="px-4 py-3">
-          <div className="flex gap-3 w-full">
-            <Pencil color={"#323232"} />
-            <span className="text-[#474747]">ჩანართის რედაქტირება</span>
-          </div>
-        </DropdownMenuItem>
-        <Link href="/dashboard/bookmarks/delete/1?modal=true">
-          <DropdownMenuItem className="px-4 py-3">
-            <div className="flex gap-3 text-[#7A0000] w-full">
-              <Trash />
-              <span>ჩანართის წაშლა</span>
+          <Link href="/dashboard/bookmarks/edit/1?modal=true" replace>
+            <div className="flex gap-3 w-full">
+              <Pencil color={"#323232"} />
+              <span className="text-[#474747]">ჩანართის რედაქტირება</span>
             </div>
+          </Link>
+        </DropdownMenuItem>
+        <Link href="/dashboard/bookmarks/delete/1?modal=true" replace>
+          <DropdownMenuItem className="px-4 py-3">
+            <Link href="/dashboard/bookmarks/delete/1?modal=true">
+              <div className="flex gap-3 text-[#7A0000] w-full">
+                <Trash />
+                <span>ჩანართის წაშლა</span>
+              </div>
+            </Link>
           </DropdownMenuItem>{" "}
         </Link>
       </DropdownMenuContent>

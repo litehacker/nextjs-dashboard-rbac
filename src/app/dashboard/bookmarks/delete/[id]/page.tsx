@@ -1,6 +1,6 @@
 "use server";
-import { deleteBookmarkById } from "@/actions/bookmarks/delete-by-id";
-import { DeleteModalForm } from "../../components/delete-modal-form";
+import { deleteBookmarkById } from "@/actions/bookmarks/delete";
+import { DeleteBookmarkForm } from "../../components/delete-form";
 
 export default async function DeletePage({
   params: { id },
@@ -10,5 +10,5 @@ export default async function DeletePage({
   };
 }) {
   const deleteBookmarkWithId = deleteBookmarkById.bind(null, id);
-  return <DeleteModalForm action={deleteBookmarkWithId} />;
+  return <DeleteBookmarkForm action={deleteBookmarkWithId} />;
 }
