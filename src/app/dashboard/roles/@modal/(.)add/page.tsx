@@ -1,7 +1,7 @@
 "use server";
 import AddRoleForm from "../../components/add-form";
 import Modal from "@/app/dashboard/components/modal";
-import { addRole } from "@/actions/roles/add-role";
+import { createRole } from "@/actions/roles/create";
 
 export default async function AddRolesModal({
   params: { id },
@@ -12,7 +12,7 @@ export default async function AddRolesModal({
 }) {
   return (
     <Modal>
-      <AddRoleForm action={addRole} />
+      <AddRoleForm action={createRole} />
     </Modal>
   );
 }

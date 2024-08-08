@@ -1,6 +1,6 @@
-import { addRole } from "@/actions/roles/add-role";
+import { createRole } from "@/actions/roles/create";
 import AddRoleForm from "../components/add-form";
 
 export default async function AddRolesForm() {
-  return <AddRoleForm action={addRole} />;
+  return <AddRoleForm action={createRole} />;
 }

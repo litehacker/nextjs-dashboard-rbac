@@ -1,7 +1,7 @@
 "use server";
-import { redirect } from "next/navigation";
+import { redirect, RedirectType } from "next/navigation";
 
 export const updateBookmark = async (id: string, formData: FormData) => {
   console.log("updating", { formData: formData });
-  redirect("/dashboard/bookmarks");
+  redirect("/dashboard/bookmarks/success?modal=true", RedirectType.replace);
 };
