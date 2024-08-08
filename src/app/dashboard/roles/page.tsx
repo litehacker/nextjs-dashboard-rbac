@@ -13,20 +13,11 @@ import { FilterBookmarks } from "../components/filter-bookmarks";
 import { Card } from "@/components/ui/card";
 import { RolesTable } from "./components/table";
 import Link from "next/link";
+import { DashboardHeader } from "../components/header";
 
 export default async function Roles() {
   return (
     <>
-      <header className="flex items-center justify-between pb-6 pt-[10px]">
-        <h1 className="text-2xl font-semibold pl-3">ჩანართები</h1>
-        <div className="flex items-center space-x-4">
-          <Avatar>
-            <AvatarImage src="/placeholder-user.jpg" alt="User" />
-            <AvatarFallback>U</AvatarFallback>
-          </Avatar>
-          <span className="pr-6">სახელი</span>
-        </div>
-      </header>
       <div className="p-2 h-full">
         <Card className="flex flex-col">
           <div className="flex justify-between px-4 py-2 items-center">

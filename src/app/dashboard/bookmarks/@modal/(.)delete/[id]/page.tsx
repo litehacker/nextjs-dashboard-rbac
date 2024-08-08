@@ -1,7 +1,7 @@
 "use server";
 import { deleteBookmarkById } from "@/actions/bookmarks/delete";
 import { DeleteBookmarkForm } from "../../../components/delete-form";
-import Modal from "../../../../components/modal";
+import Modal from "@/app/dashboard/components/modal";
 
 export default async function DeletePage({
   params: { id },

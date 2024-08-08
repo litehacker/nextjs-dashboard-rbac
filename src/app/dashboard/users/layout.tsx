@@ -12,7 +12,7 @@ export default async function Layout({
 }) {
   return (
     <>
-      <DashboardHeader>ჩანართები</DashboardHeader>
+      <DashboardHeader>მომხმარებლები</DashboardHeader>
       {children}
       {modal}
     </>

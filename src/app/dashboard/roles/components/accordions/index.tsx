@@ -168,6 +168,7 @@ export const AccordionInputs = () => {
                           handleBookmarkPermissionChange(permission.value)
                         }
                         className="text-blue-600"
+                        name={permission.value}
                       />
                     </div>
                   </div>
@@ -241,6 +242,7 @@ export const AccordionInputs = () => {
                           handleUserPermissionChange(permission.value)
                         }
                         className="text-blue-600"
+                        name={permission.value}
                       />
                     </div>
                   </div>
