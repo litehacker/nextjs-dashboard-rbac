@@ -1,7 +1,7 @@
 "use server";
-import { useRouter } from "next/navigation";
-import Modal from "../../components/modal";
-import { SuccessMessage } from "../../components/success-message";
+
+import Modal from "@/app/dashboard/components/modal";
+import { SuccessMessage } from "@/app/dashboard/components/success-message";
 
 export default async function SuccessPage({
   searchParams: { redirectToPath },
