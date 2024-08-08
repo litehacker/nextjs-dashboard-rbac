@@ -1,8 +1,8 @@
 "use server";
 
 import Modal from "@/app/dashboard/components/modal";
-import { editRole } from "@/actions/roles/update";
-import EditRoleForm from "../../../components/edit-form";
+import EditRoleForm from "@/app/dashboard/roles/components/edit-form";
+import { updateRole } from "@/actions/roles/update";
 
 export default async function DeleteRoleModal({
   params: { id },
@@ -11,10 +11,10 @@ export default async function DeleteRoleModal({
     id: string;
   };
 }) {
-  const editRoleWithId = editRole.bind(null, id);
+  const updateRoleWithId = updateRole.bind(null, id);
   return (
     <Modal>
-      <EditRoleForm action={editRoleWithId} />
+      <EditRoleForm action={updateRoleWithId} />
     </Modal>
   );
 }

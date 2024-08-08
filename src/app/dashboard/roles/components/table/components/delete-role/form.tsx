@@ -1,6 +1,7 @@
 "use server";
 import { Button } from "@/components/ui/button";
 import { CircleAlertIcon, UsersIcon, XIcon } from "lucide-react";
+import Link from "next/link";
 export const DeleteRoleDialogForm = ({
   action,
 }: {
@@ -35,8 +36,12 @@ export const DeleteRoleDialogForm = ({
         </div>
       </div>
       <div className="flex gap-4 justify-end">
-        <Button>გაუქმება</Button>
-        <Button variant="outline">წაშლა</Button>
+        <Link href="/dashboard/roles">
+          <Button>გაუქმება</Button>
+        </Link>
+        <Button variant="outline" type="submit">
+          წაშლა
+        </Button>
       </div>
     </form>
   );

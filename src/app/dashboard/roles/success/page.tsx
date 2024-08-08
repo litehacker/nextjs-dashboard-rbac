@@ -9,6 +9,6 @@ export default async function SuccessPage({
   };
 }) {
   return (
-    <SuccessMessage redirectToPath={redirectToPath ?? "/dashboard/bookmarks"} />
+    <SuccessMessage redirectToPath={redirectToPath ?? "/dashboard/roles"} />
   );
 }

@@ -1,7 +1,7 @@
 "use server";
 
-import { editRole } from "@/actions/roles/update";
-import EditRoleForm from "../../components/edit-form";
+import { updateRole } from "@/actions/roles/update";
+import EditRoleForm from "@/app/dashboard/roles/components/edit-form";
 
 export default async function EditRoleModal({
   params: { id },
@@ -10,6 +10,6 @@ export default async function EditRoleModal({
     id: string;
   };
 }) {
-  const editRoleWithId = editRole.bind(null, id);
-  return <EditRoleForm action={editRoleWithId} />;
+  const updateRoleWithId = updateRole.bind(null, id);
+  return <EditRoleForm action={updateRoleWithId} />;
 }

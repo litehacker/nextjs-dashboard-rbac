@@ -86,6 +86,7 @@ export default async function InfoRoleForm() {
             id="role-name"
             placeholder="მაგალითად: ადმინი"
             className="mt-1"
+            disabled
           />
         </div>
         <div>
@@ -99,6 +100,7 @@ export default async function InfoRoleForm() {
             id="role-description"
             placeholder="მიუთითეთ როლის აღწერა"
             className="mt-1"
+            disabled
           />
         </div>
         <div className="overflow-y-auto">
