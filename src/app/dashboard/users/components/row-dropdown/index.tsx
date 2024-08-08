@@ -22,7 +22,7 @@ export const RowDropdown = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[248px]" side="left">
         <DropdownMenuItem className="px-4 py-3">
-          <Link href="/dashboard/users/edit/1?modal=true" replace>
+          <Link href="/dashboard/users/1" replace>
             <div className="flex gap-3 w-full">
               <User color={"#323232"} />
               <span className="text-[#474747]">პროფილის ნახვა</span>
