@@ -1,7 +1,7 @@
 "use server";
 
 import Modal from "@/app/dashboard/components/modal";
-import { editRole } from "@/actions/roles/edit-role";
+import { editRole } from "@/actions/roles/update";
 import EditRoleForm from "../../../components/edit-form";
 
 export default async function DeleteRoleModal({

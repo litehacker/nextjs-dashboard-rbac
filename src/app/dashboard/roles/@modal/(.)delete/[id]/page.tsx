@@ -1,6 +1,6 @@
 "use server";
 
-import { deleteRole } from "@/actions/roles/delete-role";
+import { deleteRole } from "@/actions/roles/delete";
 import Modal from "@/app/dashboard/components/modal";
 import { DeleteRoleDialogForm } from "../../../components/table/components/delete-role/form";
 
