@@ -28,6 +28,11 @@ const userPermissions: UserPermission[] = [
     title: "მომხმარებლის წაშლა",
     description: "მომხმარებლის შექმნის უფლების ჩანაწერის წაშლა",
   },
+  {
+    value: "view_user",
+    title: "მომხმარებლის ნახვა",
+    description: "მომხმარებლის ნახვის უფლება",
+  },
 ];
 const bookmarkPermissions: BookmarkPermission[] = [
   {
@@ -45,6 +50,11 @@ const bookmarkPermissions: BookmarkPermission[] = [
     title: "ჩანაწერის წაშლა",
     description: "მომხმარებლის შექმნის უფლების ჩანაწერის წაშლა",
   },
+  {
+    value: "view_record",
+    title: "ჩანაწერის ნახვა",
+    description: "მომხმარებლის ჩანაწერის ნახვის უფლება",
+  },
 ];
 
 export const AccordionInputs = () => {
@@ -53,33 +63,45 @@ export const AccordionInputs = () => {
   const [selectedUserPermissions, setSelectedUserPermissions] = useState<
     UserPermission["value"][]
   >([]);
+
   const handleBookmarkPermissionChange = useCallback(
-    (permission: "create_record" | "edit_record" | "delete_record") => {
-      if (selectedBookmarkPermissions.includes(permission)) {
-        setSelectedBookmarkPermissions(
-          selectedBookmarkPermissions.filter((p) => p !== permission)
-        );
+    (permission: BookmarkPermission["value"]) => {
+      let updatedPermissions = [...selectedBookmarkPermissions];
+      if (updatedPermissions.includes(permission)) {
+        updatedPermissions = updatedPermissions.filter((p) => p !== permission);
       } else {
-        setSelectedBookmarkPermissions([
-          ...selectedBookmarkPermissions,
-          permission,
-        ]);
+        updatedPermissions.push(permission);
       }
+      if (
+        updatedPermissions.length > 0 &&
+        !updatedPermissions.includes("view_record")
+      ) {
+        updatedPermissions.push("view_record");
+      }
+      setSelectedBookmarkPermissions(updatedPermissions);
     },
     [selectedBookmarkPermissions]
   );
+
   const handleUserPermissionChange = useCallback(
-    (permission: "create_user" | "edit_user" | "delete_user") => {
-      if (selectedUserPermissions.includes(permission)) {
-        setSelectedUserPermissions(
-          selectedUserPermissions.filter((p) => p !== permission)
-        );
+    (permission: UserPermission["value"]) => {
+      let updatedPermissions = [...selectedUserPermissions];
+      if (updatedPermissions.includes(permission)) {
+        updatedPermissions = updatedPermissions.filter((p) => p !== permission);
       } else {
-        setSelectedUserPermissions([...selectedUserPermissions, permission]);
+        updatedPermissions.push(permission);
       }
+      if (
+        updatedPermissions.length > 0 &&
+        !updatedPermissions.includes("view_user")
+      ) {
+        updatedPermissions.push("view_user");
+      }
+      setSelectedUserPermissions(updatedPermissions);
     },
     [selectedUserPermissions]
   );
+
   return (
     <div className="overflow-y-auto">
       <Label className="block text-sm font-medium">როლის უფლებები</Label>
