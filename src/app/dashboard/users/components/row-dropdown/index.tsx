@@ -7,9 +7,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { EllipsisVertical, Trash, User } from "lucide-react";
-import Link from "next/link";
+import { ButtonLinkWrapper } from "./button-wrapper";
 
-export const RowDropdown = () => {
+export const RowDropdown = async () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -22,23 +22,23 @@ export const RowDropdown = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[248px]" side="left">
         <DropdownMenuItem className="px-4 py-3">
-          <Link href="/dashboard/users/1" replace>
-            <div className="flex gap-3 w-full">
-              <User color={"#323232"} />
-              <span className="text-[#474747]">პროფილის ნახვა</span>
-            </div>
-          </Link>
+          <ButtonLinkWrapper
+            className="flex gap-3 w-full"
+            href="/dashboard/users/1"
+          >
+            <User color={"#323232"} />
+            <span className="text-[#474747]">პროფილის ნახვა</span>
+          </ButtonLinkWrapper>
         </DropdownMenuItem>
-        <Link href="/dashboard/users/delete/1?modal=true" replace>
-          <DropdownMenuItem className="px-4 py-3">
-            <Link href="/dashboard/bookmarks/delete/1?modal=true">
-              <div className="flex gap-3 text-[#7A0000] w-full">
-                <Trash />
-                <span>მომხმარებლის გაუქმება</span>
-              </div>
-            </Link>
-          </DropdownMenuItem>
-        </Link>
+        <DropdownMenuItem className="px-4 py-3">
+          <ButtonLinkWrapper
+            href="/dashboard/users/delete/1?modal=true"
+            className="flex gap-3 text-[#7A0000] w-full"
+          >
+            <Trash />
+            <span>მომხმარებლის გაუქმება</span>
+          </ButtonLinkWrapper>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

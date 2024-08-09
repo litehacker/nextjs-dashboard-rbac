@@ -14,11 +14,12 @@ export const DeleteUserForm = ({
       <div className="flex flex-col items-center">
         <Trash className="h-8 w-8 m-8" />
         <h1 className="text-xl font-semibold mb-8">
-          ნამდვილად გსურთ ჩანართის წაშლა?
+          დახურვის შემთხვევაში, დაკარგავთ შევსებულ ინფორმაციას.ნამდვილად გსურთ
+          დახურვა?
         </h1>
       </div>
       <form className="flex justify-between py-4 gap-[10px]" action={action}>
-        <Link href="/dashboard/bookmarks" replace>
+        <Link href="/dashboard/users" replace>
           <Button>არა</Button>
         </Link>
         <Button variant={"outline"} type="submit">

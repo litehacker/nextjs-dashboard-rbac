@@ -65,7 +65,7 @@ export const CreateUserForm = ({
           </div>
         </section>
         <div className="flex justify-end p-4 border-t border-[#C9D0E1] gap-3">
-          <Link href="/dashboard/bookmarks" replace>
+          <Link href="/dashboard/users" replace>
             <Button variant="ghost">გაუქმება</Button>
           </Link>
           <Button type="submit">დამატება</Button>
