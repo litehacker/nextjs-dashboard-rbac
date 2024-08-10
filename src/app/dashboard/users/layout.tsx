@@ -10,9 +10,9 @@ export default async function Layout({
   details,
 }: {
   children: ReactNode;
-  modal?: ReactNode;
-  table?: ReactNode;
-  details?: ReactNode;
+  modal: ReactNode;
+  table: ReactNode;
+  details: ReactNode;
 }) {
   return (
     <>
