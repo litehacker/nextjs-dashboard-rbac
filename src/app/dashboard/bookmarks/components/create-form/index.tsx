@@ -21,7 +21,7 @@ export const CreateBookmarkForm = ({
 }) => {
   return (
     <div className="w-full flex justify-center">
-      <form className="flex flex-col max-w-[500px] w-full" action={action}>
+      <form className="flex flex-col w-full" action={action}>
         <h1 className="p-4 flex justify-center border-b border-[#C9D0E1]">
           ჩანართის შექმნა
         </h1>

@@ -32,7 +32,7 @@ export const DashboardNavigation = () => {
     navigation.findIndex((item) => item.href === pathname)
   );
   return (
-    <aside className="flex flex-col gap-16 bg-white max-w-[280px] m-[10px] rounded-xl group absolute h-[calc(100vh-16px)] z-10 shadow">
+    <aside className="flex flex-col gap-16 bg-white max-w-[280px] m-[10px] rounded-xl group absolute h-[calc(100vh-16px)] z-20 shadow">
       <div className="flex items-center justify-center gap-2 px-3 pt-[10px]">
         <figure className="w-[44px]">
           <DashboardHomeIcon />
