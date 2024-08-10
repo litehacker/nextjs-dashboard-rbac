@@ -1,6 +1,7 @@
 "use server";
 
 import { uploadFile } from "@/actions/files/upload";
+import Modal from "@/app/dashboard/components/modal";
 import { FileUploadForm } from "@/app/dashboard/upload/[id]/components/file-upload-form";
 
 export default async function UploadFileModal({
@@ -11,5 +12,9 @@ export default async function UploadFileModal({
   };
 }) {
   const uploadFileWithId = uploadFile.bind(null, id);
-  return <FileUploadForm action={uploadFileWithId} />;
+  return (
+    <Modal>
+      <FileUploadForm action={uploadFileWithId} />
+    </Modal>
+  );
 }
