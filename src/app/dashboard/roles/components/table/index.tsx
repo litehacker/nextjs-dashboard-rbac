@@ -113,7 +113,7 @@ export const columns: ColumnDef<Role>[] = [
       const role = row.original;
 
       return (
-        <div className="flex justify-end w-full">
+        <div className="justify-end w-full flex group-hover:z-10 -z-10 relative">
           <div className="flex gap-6 shadow px-3 py-1.5 rounded-md">
             <Link
               href={"/dashboard/roles/info/" + role.id + "?modal=true"}
@@ -193,7 +193,7 @@ export function RolesTable() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border">
+      <div className="">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -219,6 +219,7 @@ export function RolesTable() {
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
+                  className="group h-[61px]"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>

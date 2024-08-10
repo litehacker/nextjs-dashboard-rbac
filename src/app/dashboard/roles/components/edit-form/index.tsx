@@ -13,7 +13,7 @@ export default async function EditRoleForm({
   action: string | ((formData: FormData) => void) | undefined;
 }) {
   return (
-    <form className="w-full max-w-3xl mx-auto" action={action}>
+    <form className="w-full p-4" action={action}>
       <div className="flex justify-between items-center mb-4">
         <div className="flex gap-3 items-center">
           <Link href="/dashboard/roles" replace>
@@ -25,7 +25,7 @@ export default async function EditRoleForm({
         </div>
         <Button>შენახვა</Button>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-4 max-h-[600px] overflow-y-auto">
         <div>
           <Label htmlFor="role-name" className="block text-sm font-medium">
             როლის სახელწოდება <span className="text-red-600">*</span>

@@ -57,7 +57,7 @@ const bookmarkPermissions: BookmarkPermission[] = [
   },
 ];
 
-export const AccordionInputs = () => {
+export const AccordionInputs = ({ disabled }: { disabled?: boolean }) => {
   const [selectedBookmarkPermissions, setSelectedBookmarkPermissions] =
     useState<BookmarkPermission["value"][]>([]);
   const [selectedUserPermissions, setSelectedUserPermissions] = useState<
@@ -169,6 +169,7 @@ export const AccordionInputs = () => {
                         }
                         className="text-blue-600"
                         name={permission.value}
+                        disabled={disabled}
                       />
                     </div>
                   </div>
@@ -243,6 +244,7 @@ export const AccordionInputs = () => {
                         }
                         className="text-blue-600"
                         name={permission.value}
+                        disabled={disabled}
                       />
                     </div>
                   </div>
