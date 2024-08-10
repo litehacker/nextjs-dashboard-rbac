@@ -11,7 +11,6 @@ import {
 import { Header } from "../components/header";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { RowDropdown } from "../components/row-dropdown";
-import Link from "next/link";
 
 export default async function UserDetailsPage() {
   return (

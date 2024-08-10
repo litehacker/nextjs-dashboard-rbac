@@ -14,8 +14,7 @@ export const DeleteUserForm = ({
       <div className="flex flex-col items-center">
         <Trash className="h-8 w-8 m-8" />
         <h1 className="text-xl font-semibold mb-8">
-          დახურვის შემთხვევაში, დაკარგავთ შევსებულ ინფორმაციას.ნამდვილად გსურთ
-          დახურვა?
+          ნამდვილად გსურთ მომხმარებლის წაშლა?
         </h1>
       </div>
       <form className="flex justify-between py-4 gap-[10px]" action={action}>

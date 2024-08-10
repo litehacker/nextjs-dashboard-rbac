@@ -1,6 +1,6 @@
 "use server";
 import { Button } from "@/components/ui/button";
-import { CircleAlertIcon, UsersIcon, XIcon } from "lucide-react";
+import { CircleAlertIcon, UsersIcon, X, XIcon } from "lucide-react";
 import Link from "next/link";
 export const DeleteRoleDialogForm = ({
   action,
@@ -8,12 +8,14 @@ export const DeleteRoleDialogForm = ({
   action: string | ((formData: FormData) => void) | undefined;
 }) => {
   return (
-    <form className="flex flex-col gap-[18px]" action={action}>
-      <div className="flex relative w-full items-center">
+    <form className="flex flex-col gap-[18px] p-4" action={action}>
+      <div className="flex relative w-full items-center justify-between">
         <h1 className="flex justify-center ">როლის წაშლა</h1>
-        <Button variant="ghost" className="absolute right-0 top-3 p-0 h-0">
-          <XIcon />
-        </Button>
+        <Link href="/dashboard/roles" replace>
+          <Button className="p-0" variant="ghost">
+            <X />
+          </Button>
+        </Link>
       </div>
       <div className="space-y-4">
         <div className="flex items-center space-x-2 p-[10px] bg-[#F8F2F1] rounded-md">

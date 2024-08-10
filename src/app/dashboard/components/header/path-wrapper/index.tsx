@@ -12,9 +12,8 @@ export const PathWrapper = ({
   href: string;
 }) => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
-    <Link href={`${href}?source=${pathname}`} replace>
+    <Link href={`${href}?source=${pathname}&modal=true`} replace>
       {children}
     </Link>
   );

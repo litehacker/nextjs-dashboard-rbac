@@ -1,9 +1,9 @@
 "use server";
 
 import { uploadFile } from "@/actions/files/upload";
-import { FileUploadForm } from "./components/file-upload-form";
+import { FileUploadForm } from "@/app/dashboard/upload/[id]/components/file-upload-form";
 
-export default async function UploadFilePage({
+export default async function UploadFileModal({
   params: { id },
 }: {
   params: {

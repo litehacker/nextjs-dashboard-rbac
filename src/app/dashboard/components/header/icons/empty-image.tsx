@@ -7,7 +7,7 @@ export const EmptyAvatar = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1001_8012)">
+      <g clipPath="url(#clip0_1001_8012)">
         <rect x="2" y="2" width="48" height="48" rx="24" fill="#F5F8FF" />
         <path
           d="M-5 62C-5 58.8845 -4.19816 55.7996 -2.64027 52.9213C-1.08237 50.043 1.20107 47.4277 4.07969 45.2247C6.95831 43.0218 10.3757 41.2743 14.1368 40.0821C17.8979 38.8898 21.929 38.2762 26 38.2762C30.071 38.2762 34.1021 38.8898 37.8632 40.0821C41.6243 41.2743 45.0417 43.0218 47.9203 45.2247C50.7989 47.4277 53.0824 50.043 54.6403 52.9213C56.1982 55.7996 57 58.8845 57 62L-5 62Z"
@@ -36,8 +36,8 @@ export const EmptyAvatar = () => {
           y2="62"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2670FF" />
-          <stop offset="1" stop-color="#F5F8FF" />
+          <stop stopColor="#2670FF" />
+          <stop offset="1" stopColor="#F5F8FF" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1001_8012"
@@ -47,8 +47,8 @@ export const EmptyAvatar = () => {
           y2="62"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2670FF" />
-          <stop offset="1" stop-color="#F5F8FF" />
+          <stop stopColor="#2670FF" />
+          <stop offset="1" stopColor="#F5F8FF" />
         </linearGradient>
         <clipPath id="clip0_1001_8012">
           <rect x="2" y="2" width="48" height="48" rx="24" fill="white" />

@@ -1,5 +1,4 @@
 "use server";
-
 import { ReactNode } from "react";
 
 export default async function Layout({
@@ -7,7 +6,7 @@ export default async function Layout({
   table,
 }: {
   children: ReactNode;
-  table?: ReactNode;
+  table: ReactNode;
 }) {
   return (
     <>

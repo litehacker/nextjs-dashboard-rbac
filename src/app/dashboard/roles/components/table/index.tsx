@@ -114,7 +114,7 @@ export const columns: ColumnDef<Role>[] = [
 
       return (
         <div className="justify-end w-full flex group-hover:z-10 -z-10 relative">
-          <div className="flex gap-6 shadow px-3 py-1.5 rounded-md">
+          <div className="flex gap-6 shadow px-3 py-1.5 rounded-md bg-white">
             <Link
               href={"/dashboard/roles/info/" + role.id + "?modal=true"}
               className="p-2"
