@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import Link from "next/link";
+import { UserForm } from "../user-form";
 
 export const EditUserForm = ({
   action,
@@ -20,50 +21,12 @@ export const EditUserForm = ({
   action: (formData: FormData) => Promise<never>;
 }) => {
   return (
-    <div className="w-full flex justify-center">
-      <form className="flex flex-col max-w-[500px] w-full" action={action}>
+    <div className="w-full flex justify-center bg-white">
+      <form className="flex flex-col w-full" action={action}>
         <h1 className="p-4 flex justify-center border-b border-[#C9D0E1]">
-          ჩანართის რედაქტირება
+          მომხმარებლის რედაქტირება
         </h1>
-        <section className="flex flex-col gap-4 p-6">
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="titleGeo" className="">
-              დასახელება (ქარ) *
-            </Label>
-            <Input
-              id="titleGeo"
-              name="titleGeo"
-              placeholder="ჩაწერეთ სახელი"
-              required
-            />
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="titleEng" className="block text-sm font-medium">
-              დასახელება (ENG)
-            </Label>
-            <Input id="titleEng" name="titleEng" placeholder="ჩაწერეთ სახელი" />
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="type" className="block text-sm font-medium">
-              დოკუმენტის დონე *
-            </Label>
-            <Select name="type" required>
-              <SelectTrigger className="  ">
-                <SelectValue placeholder="Select a fruit" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Fruits</SelectLabel>
-                  <SelectItem value="apple">Apple</SelectItem>
-                  <SelectItem value="banana">Banana</SelectItem>
-                  <SelectItem value="blueberry">Blueberry</SelectItem>
-                  <SelectItem value="grapes">Grapes</SelectItem>
-                  <SelectItem value="pineapple">Pineapple</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          </div>
-        </section>
+        <UserForm />
         <div className="flex justify-end p-4 border-t border-[#C9D0E1] gap-3">
           <Link href="/dashboard/users" replace>
             <Button variant="ghost">გაუქმება</Button>

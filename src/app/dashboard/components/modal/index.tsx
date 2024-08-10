@@ -8,7 +8,7 @@ export default function Modal({ children }: { children: ReactNode }) {
 
   return (
     <Dialog open={Boolean(searchParams.get("modal") === "true")}>
-      <DialogContent className="max-h-[600px] overflow-auto bg-transparent border-none p-4 rounded-2xl bg-gray-100">
+      <DialogContent className="max-h-[100vh] overflow-hidden bg-transparent border-none p-0 rounded-2xl bg-gray-100 max-w-[800px]">
         {children}
       </DialogContent>
     </Dialog>
