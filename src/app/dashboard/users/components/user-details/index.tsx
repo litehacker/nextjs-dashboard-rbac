@@ -21,9 +21,11 @@ export const UserDetails = async ({ id }: { id: string }) => {
   const token = await getToken();
   const hasEditUserPermission =
     authUser.role.permissions.users?.some(
-      (permission) => permission.key === "edit"
+      (permission) => permission.key === "update"
     ) ?? false;
+
   let user: User | undefined = undefined;
+
   try {
     console.log("requesting: ", process.env.BASE_URL + "/api/v1/users/" + id);
     const response = await fetch(process.env.BASE_URL + "/api/v1/users/" + id, {

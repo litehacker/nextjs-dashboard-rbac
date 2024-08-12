@@ -16,22 +16,6 @@
       "id": 1
     },
     {
-      "name": "newUser",
-      "name_eng": "newUser",
-      "lastName": "newUser",
-      "lastName_eng": "newUser",
-      "agency": "newUser",
-      "position": "newUser",
-      "email": "newUser@gmail.com",
-      "mobile": "123456789",
-      "phone": "123456789",
-      "password": "$2b$10$pZ.RPakVFlokHh/5m8Vag.evpD62bcHbxfmDTP6IlQNs9WZXXSDf2",
-      "role": 1,
-      "createdAt": "2024-07-31T16:12:57.073Z",
-      "updatedAt": "2024-07-31T16:12:57.073Z",
-      "id": 2
-    },
-    {
       "name": "newUser3",
       "name_eng": "newUser",
       "lastName": "newUser",
@@ -79,22 +63,6 @@
       "createdAt": "2024-08-01T12:35:20.546Z",
       "updatedAt": "2024-08-01T12:35:20.546Z",
       "id": 6
-    },
-    {
-      "name": "newUser4",
-      "name_eng": "newUser",
-      "lastName": "newUser",
-      "lastName_eng": "newUser",
-      "agency": "newUser",
-      "position": "newUser",
-      "email": "newUser3@gmail.com",
-      "mobile": "123456789",
-      "phone": "123456789",
-      "password": "$2b$10$8byia9tPa2VC3/Ttzhxe6ulf54pwpazGLJ2IrbltjGZFInE94ThnC",
-      "role": 2,
-      "createdAt": "2024-08-01T12:35:37.371Z",
-      "updatedAt": "2024-08-01T12:35:37.371Z",
-      "id": 7
     }
   ],
   "roles": [

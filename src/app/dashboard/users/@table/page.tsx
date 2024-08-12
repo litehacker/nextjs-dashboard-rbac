@@ -24,13 +24,17 @@ export default async function UsersTablePage({
     role?: string;
   };
 }) {
-  const user = await getAuthUser();
+  const authUser = await getAuthUser();
   const token = await getToken();
   const users: User[] = [];
 
   const hasAddUserPermission =
-    user.role.permissions.users?.some(
+    authUser.role.permissions.users?.some(
       (permission) => permission.key === "add"
+    ) ?? false;
+  const hasDeleteUserPermission =
+    authUser.role.permissions.users?.some(
+      (permission) => permission.key === "delete"
     ) ?? false;
 
   const searchParams = new URLSearchParams();
@@ -107,7 +111,10 @@ export default async function UsersTablePage({
               <TableCell>
                 <div className="flex justify-between items-center">
                   <span className="min-w-20">{user?.phone}</span>
-                  <RowDropdown id={String(user.id)} />
+                  <RowDropdown
+                    id={String(user.id)}
+                    hasDeleteUserPermission={hasDeleteUserPermission}
+                  />
                 </div>
               </TableCell>
             </TableRow>
