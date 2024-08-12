@@ -1,11 +1,11 @@
 export type UserPermission = {
-  value: "create_user" | "edit_user" | "delete_user" | "view_user";
+  value: "add" | "update" | "delete" | "view";
   title: string;
   description: string;
 };
 
 export type BookmarkPermission = {
-  value: "create_record" | "edit_record" | "delete_record" | "view_record";
+  value: "add_archive" | "edit" | "delete" | "view" | "add";
   title: string;
   description: string;
 };

@@ -3,69 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import { CircleCheckIcon, X } from "lucide-react";
-import { cn } from "@/lib/utils";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import Link from "next/link";
 import { AccordionInputs } from "../accordions";
-
-const userPermissions: UserPermission[] = [
-  {
-    value: "create_user",
-    title: "მომხმარებლის შექმნა",
-    description: "მომხმარებლის შექმნის უფლების ჩანაწერი",
-  },
-  {
-    value: "edit_user",
-    title: "მომხმარებლის რედაქტირება",
-    description: "მომხმარებლის შექმნის უფლების ჩანაწერის რედაქტირება",
-  },
-  {
-    value: "delete_user",
-    title: "მომხმარებლის წაშლა",
-    description: "მომხმარებლის შექმნის უფლების ჩანაწერის წაშლა",
-  },
-];
-type UserPermission = {
-  value: "create_user" | "edit_user" | "delete_user";
-  title: string;
-  description: string;
-};
-
-const bookmarkPermissions: BookmarkPermission[] = [
-  {
-    value: "create_record",
-    title: "ჩანაწერის შექმნა",
-    description: "მომხმარებლის შექმნის უფლების ჩანაწერი",
-  },
-  {
-    value: "edit_record",
-    title: "ჩანაწერის რედაქტირება",
-    description: "მომხმარებლის შექმნის უფლების ჩანაწერის რედაქტირება",
-  },
-  {
-    value: "delete_record",
-    title: "ჩანაწერის წაშლა",
-    description: "მომხმარებლის შექმნის უფლების ჩანაწერის წაშლა",
-  },
-];
-
-type BookmarkPermission = {
-  value: "create_record" | "edit_record" | "delete_record";
-  title: string;
-  description: string;
-};
+import { X } from "lucide-react";
 
 export default async function InfoRoleForm() {
-  const selectedBookmarkPermissions = ["create_record"];
-  const selectedUserPermissions = ["create_user"];
-
   return (
     <div className="w-full p-4">
       <div className="flex justify-between items-center mb-4">

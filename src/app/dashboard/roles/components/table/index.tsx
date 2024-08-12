@@ -28,7 +28,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export type Role = {
@@ -83,21 +83,21 @@ export const columns: ColumnDef<Role>[] = [
         <div className="justify-end w-full flex group-hover:z-10 -z-10 relative">
           <div className="flex gap-6 shadow px-3 py-1.5 rounded-md bg-white">
             <Link
-              href={"/dashboard/roles/info/" + role.id + "?modal=true"}
+              href={"/dashboard/roles/info/" + role?.id + "?modal=true"}
               className="p-2"
               replace
             >
               <Info size={16} />
             </Link>
             <Link
-              href={"/dashboard/roles/edit/" + role.id + "?modal=true"}
+              href={"/dashboard/roles/edit/" + role?.id + "?modal=true"}
               className="p-2"
               replace
             >
               <Pencil size={16} />
             </Link>
             <Link
-              href={"/dashboard/roles/delete/" + role.id + "?modal=true"}
+              href={"/dashboard/roles/delete/" + role?.id + "?modal=true"}
               className="p-2"
               replace
             >
@@ -137,7 +137,9 @@ export function RolesTable({ roles }: { roles: any[] }) {
       rowSelection,
     },
   });
-
+  useEffect(() => {
+    console.log(roles);
+  }, [roles]);
   return (
     <div className="w-full">
       <div className="flex items-center py-4">

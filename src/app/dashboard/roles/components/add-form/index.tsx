@@ -27,25 +27,24 @@ export default async function AddRoleForm({
       </div>
       <div className="space-y-4 max-h-[600px] overflow-y-auto">
         <div>
-          <Label htmlFor="role-name" className="block text-sm font-medium">
+          <Label htmlFor="name" className="block text-sm font-medium">
             როლის სახელწოდება <span className="text-red-600">*</span>
           </Label>
           <Input
-            id="role-name"
+            id="name"
+            name="name"
             placeholder="მაგალითად: ადმინი"
             className="mt-1"
             required
           />
         </div>
         <div>
-          <Label
-            htmlFor="role-description"
-            className="block text-sm font-medium"
-          >
+          <Label htmlFor="description" className="block text-sm font-medium">
             როლის აღწერა
           </Label>
           <Input
-            id="role-description"
+            id="description"
+            name="description"
             placeholder="მიუთითეთ როლის აღწერა"
             className="mt-1"
           />

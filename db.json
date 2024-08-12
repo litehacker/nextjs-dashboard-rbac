@@ -187,6 +187,56 @@
       "createdAt": "2024-08-01T12:20:57.655Z",
       "updatedAt": "2024-08-01T12:20:57.655Z",
       "id": 3
+    },
+    {
+      "permissions": {
+        "users": [
+          {
+            "key": "user_add",
+            "name": "on"
+          },
+          {
+            "key": "user_view",
+            "name": "on"
+          }
+        ],
+        "tabs": [
+          {
+            "key": "tab_add",
+            "name": "on"
+          },
+          {
+            "key": "tab_view",
+            "name": "on"
+          }
+        ],
+        "roles": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "createdAt": "2024-08-12T14:10:46.641Z",
+      "updatedAt": "2024-08-12T14:10:46.641Z",
+      "id": 4
+    },
+    {
+      "name": "test 2",
+      "description": "native nfc reader",
+      "permissions": {
+        "users": [],
+        "tabs": [],
+        "roles": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "createdAt": "2024-08-12T14:13:21.159Z",
+      "updatedAt": "2024-08-12T14:13:21.159Z",
+      "id": 5
     }
   ],
   "permissions": {

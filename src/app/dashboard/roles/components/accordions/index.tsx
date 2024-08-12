@@ -14,44 +14,44 @@ import { BookmarkPermission, UserPermission } from "@/lib/types";
 
 const userPermissions: UserPermission[] = [
   {
-    value: "create_user",
+    value: "add",
     title: "მომხმარებლის შექმნა",
     description: "მომხმარებლის შექმნის უფლების ჩანაწერი",
   },
   {
-    value: "edit_user",
+    value: "update",
     title: "მომხმარებლის რედაქტირება",
     description: "მომხმარებლის შექმნის უფლების ჩანაწერის რედაქტირება",
   },
   {
-    value: "delete_user",
+    value: "delete",
     title: "მომხმარებლის წაშლა",
     description: "მომხმარებლის შექმნის უფლების ჩანაწერის წაშლა",
   },
   {
-    value: "view_user",
+    value: "view",
     title: "მომხმარებლის ნახვა",
     description: "მომხმარებლის ნახვის უფლება",
   },
 ];
 const bookmarkPermissions: BookmarkPermission[] = [
   {
-    value: "create_record",
+    value: "add",
     title: "ჩანაწერის შექმნა",
     description: "მომხმარებლის შექმნის უფლების ჩანაწერი",
   },
   {
-    value: "edit_record",
+    value: "edit",
     title: "ჩანაწერის რედაქტირება",
     description: "მომხმარებლის შექმნის უფლების ჩანაწერის რედაქტირება",
   },
   {
-    value: "delete_record",
+    value: "delete",
     title: "ჩანაწერის წაშლა",
     description: "მომხმარებლის შექმნის უფლების ჩანაწერის წაშლა",
   },
   {
-    value: "view_record",
+    value: "view",
     title: "ჩანაწერის ნახვა",
     description: "მომხმარებლის ჩანაწერის ნახვის უფლება",
   },
@@ -74,9 +74,9 @@ export const AccordionInputs = ({ disabled }: { disabled?: boolean }) => {
       }
       if (
         updatedPermissions.length > 0 &&
-        !updatedPermissions.includes("view_record")
+        !updatedPermissions.includes("view")
       ) {
-        updatedPermissions.push("view_record");
+        updatedPermissions.push("view");
       }
       setSelectedBookmarkPermissions(updatedPermissions);
     },
@@ -93,9 +93,9 @@ export const AccordionInputs = ({ disabled }: { disabled?: boolean }) => {
       }
       if (
         updatedPermissions.length > 0 &&
-        !updatedPermissions.includes("view_user")
+        !updatedPermissions.includes("view")
       ) {
-        updatedPermissions.push("view_user");
+        updatedPermissions.push("view");
       }
       setSelectedUserPermissions(updatedPermissions);
     },
@@ -117,12 +117,7 @@ export const AccordionInputs = ({ disabled }: { disabled?: boolean }) => {
                 {selectedBookmarkPermissions.length ? (
                   <div className="flex items-center space-x-2 text-blue-500">
                     <CircleCheckIcon className="w-6 h-6" />
-                    <span>
-                      {
-                        // total amount of checked roles inside the permissions
-                        selectedBookmarkPermissions.length
-                      }
-                    </span>
+                    <span>{selectedBookmarkPermissions.length}</span>
                   </div>
                 ) : null}
               </div>
@@ -139,10 +134,7 @@ export const AccordionInputs = ({ disabled }: { disabled?: boolean }) => {
                     <div
                       className={cn(
                         "border rounded-md flex p-2 justify-between items-center",
-                        {
-                          "bg-[#F5F8FF]": checked,
-                          "bg-white": !checked,
-                        }
+                        { "bg-[#F5F8FF]": checked, "bg-white": !checked }
                       )}
                     >
                       <div>
@@ -168,8 +160,8 @@ export const AccordionInputs = ({ disabled }: { disabled?: boolean }) => {
                           handleBookmarkPermissionChange(permission.value)
                         }
                         className="text-blue-600"
-                        name={permission.value}
-                        disabled={disabled}
+                        name={`tab_${permission.value}`}
+                        disabled={false}
                       />
                     </div>
                   </div>
@@ -192,12 +184,7 @@ export const AccordionInputs = ({ disabled }: { disabled?: boolean }) => {
                 {selectedUserPermissions.length ? (
                   <div className="flex items-center space-x-2 text-blue-500">
                     <CircleCheckIcon className="w-6 h-6" />
-                    <span>
-                      {
-                        // total amount of checked roles inside the permissions
-                        selectedUserPermissions.length
-                      }
-                    </span>
+                    <span>{selectedUserPermissions.length}</span>
                   </div>
                 ) : null}
               </div>
@@ -214,10 +201,7 @@ export const AccordionInputs = ({ disabled }: { disabled?: boolean }) => {
                     <div
                       className={cn(
                         "border rounded-md flex p-2 justify-between items-center",
-                        {
-                          "bg-[#F5F8FF]": checked,
-                          "bg-white": !checked,
-                        }
+                        { "bg-[#F5F8FF]": checked, "bg-white": !checked }
                       )}
                     >
                       <div>
@@ -243,8 +227,8 @@ export const AccordionInputs = ({ disabled }: { disabled?: boolean }) => {
                           handleUserPermissionChange(permission.value)
                         }
                         className="text-blue-600"
-                        name={permission.value}
-                        disabled={disabled}
+                        name={`user_${permission.value}`}
+                        disabled={false}
                       />
                     </div>
                   </div>
