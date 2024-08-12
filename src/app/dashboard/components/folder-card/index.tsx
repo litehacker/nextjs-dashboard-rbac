@@ -13,7 +13,7 @@ export const FolderCard = async ({
   hasEditPermission: boolean;
 }) => {
   return (
-    <Card className="flex flex-col p-4 space-y-2 group relative">
+    <Card className="flex flex-col p-4 space-y-2 group relative h-fit">
       <div className="flex justify-center">
         <div
           id="folder"

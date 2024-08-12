@@ -12,7 +12,15 @@ import { FilterBookmarks } from "../components/filter-bookmarks";
 import Link from "next/link";
 import { getAuthUser, getToken } from "@/lib/auth-check";
 
-export default async function Bookmarks() {
+export default async function Bookmarks({
+  searchParams: { name, name_code, document_level_id },
+}: {
+  searchParams: {
+    name?: string;
+    name_code?: string;
+    document_level_id?: string;
+  };
+}) {
   const user = await getAuthUser();
   const token = await getToken();
 
@@ -30,12 +38,25 @@ export default async function Bookmarks() {
     ) ?? false;
 
   const tabs = [];
+  const searchParams = new URLSearchParams();
+  if (name) {
+    searchParams.append("name", name);
+  }
+  if (name_code) {
+    searchParams.append("name_code", name_code);
+  }
+  if (document_level_id) {
+    searchParams.append("document_level_id", document_level_id);
+  }
   try {
-    const response = await fetch(process.env.BASE_URL + "/api/v1/tabs", {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    });
+    const response = await fetch(
+      process.env.BASE_URL + "/api/v1/tabs?" + searchParams.toString(),
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
     if (response.ok) {
       const internalResponseJSON = await response.json();
       if (internalResponseJSON.success) {

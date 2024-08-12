@@ -3,18 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import Link from "next/link";
-import BookmarkArchiveConfirmDate from "./date-input";
 import BookmarkArchiveDate from "./date-input";
+import { DocumentLevelInput } from "../document-level-input";
 
 export const ArchiveBookmarkForm = ({
   action,
@@ -29,42 +20,23 @@ export const ArchiveBookmarkForm = ({
         </h1>
         <section className="flex flex-col gap-4 p-6">
           <div className="flex flex-col gap-1.5">
-            <Label htmlFor="titleGeo" className="">
-              დოკუმენტის დასახელება (ქართ) *
+            <Label htmlFor="name" className="">
+              დასახელება (ქარ) *
             </Label>
             <Input
-              id="titleGeo"
-              name="titleGeo"
+              id="name"
+              name="name"
               placeholder="ჩაწერეთ სახელი"
               required
             />
           </div>
           <div className="flex flex-col gap-1.5">
-            <Label htmlFor="titleEng" className="block text-sm font-medium">
-              დოკუმენტის დასახელება (ENG)
+            <Label htmlFor="name_eng" className="block text-sm font-medium">
+              დასახელება (ENG)
             </Label>
-            <Input id="titleEng" name="titleEng" placeholder="ჩაწერეთ სახელი" />
+            <Input id="name_eng" name="name_eng" placeholder="ჩაწერეთ სახელი" />
           </div>
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="type" className="block text-sm font-medium">
-              დოკუმენტის დონე *
-            </Label>
-            <Select name="type" required>
-              <SelectTrigger className="  ">
-                <SelectValue placeholder="Select a fruit" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Fruits</SelectLabel>
-                  <SelectItem value="apple">Apple</SelectItem>
-                  <SelectItem value="banana">Banana</SelectItem>
-                  <SelectItem value="blueberry">Blueberry</SelectItem>
-                  <SelectItem value="grapes">Grapes</SelectItem>
-                  <SelectItem value="pineapple">Pineapple</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          </div>
+          <DocumentLevelInput required />
           <div className="flex flex-col gap-1.5">
             <Label className="block text-sm font-medium" htmlFor="startDate">
               დოკუმენტის მოქმედების პერიოდი *

@@ -35,7 +35,7 @@ export const CreateBookmarkForm = ({
             </Label>
             <Input id="name_eng" name="name_eng" placeholder="ჩაწერეთ სახელი" />
           </div>
-          <DocumentLevelInput />
+          <DocumentLevelInput required />
         </section>
         <div className="flex justify-end p-4 border-t border-[#C9D0E1] gap-3">
           <Link href="/dashboard/bookmarks" replace>

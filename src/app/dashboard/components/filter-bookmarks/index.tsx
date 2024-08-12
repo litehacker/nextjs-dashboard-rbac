@@ -12,19 +12,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { CircleHelp } from "lucide-react";
+import { DocumentLevelInput } from "../../bookmarks/components/document-level-input";
 
 export const FilterBookmarks = async () => {
   return (
@@ -60,15 +54,15 @@ export const FilterBookmarks = async () => {
             </div>
             <div className="space-y-2">
               <Label
-                htmlFor="namecode"
+                htmlFor="name_code"
                 className="text-sm font-medium text-black"
               >
                 NAMECODE
               </Label>
               <div className="relative">
                 <Input
-                  id="namecode"
-                  name="namecode"
+                  id="name_code"
+                  name="name_code"
                   placeholder="ჩანაწერი სახელი"
                   className="pr-10"
                 />
@@ -83,23 +77,7 @@ export const FilterBookmarks = async () => {
               </div>
             </div>
           </TooltipProvider>
-          <div className="space-y-2">
-            <Label
-              htmlFor="birthdate"
-              className="text-sm font-medium text-black"
-            >
-              დაბადების თარიღი
-            </Label>
-            <Select>
-              <SelectTrigger id="birthdate" aria-label="Birthdate">
-                <SelectValue placeholder="აირჩიეთ" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="1">Option 1</SelectItem>
-                <SelectItem value="2">Option 2</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+          <DocumentLevelInput />
         </CardContent>
         <CardFooter className="flex justify-end gap-2">
           <Button variant="ghost" className="font-bold" type="reset">

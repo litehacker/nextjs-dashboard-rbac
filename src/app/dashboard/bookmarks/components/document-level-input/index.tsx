@@ -12,8 +12,10 @@ import {
 
 export const DocumentLevelInput = async ({
   defaultValue,
+  required,
 }: {
   defaultValue?: string;
+  required?: boolean;
 }) => {
   const response = await fetch("http://localhost:3001/document_level");
   const doclevels = await response.json();
@@ -22,7 +24,11 @@ export const DocumentLevelInput = async ({
       <Label htmlFor="document_level_id" className="block text-sm font-medium">
         დოკუმენტის დონე *
       </Label>
-      <Select name="document_level_id" required defaultValue={defaultValue}>
+      <Select
+        name="document_level_id"
+        required={required}
+        defaultValue={defaultValue}
+      >
         <SelectTrigger className="  ">
           <SelectValue placeholder="აირჩიეთ დოკუმენტის დონე" />
         </SelectTrigger>

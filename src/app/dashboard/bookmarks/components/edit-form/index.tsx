@@ -72,6 +72,7 @@ export const EditBookmarkForm = async ({
                   ? String(tab.document_level_id)
                   : undefined
               }
+              required
             />
           </section>
           <div className="flex justify-end p-4 border-t border-[#C9D0E1] gap-3">
