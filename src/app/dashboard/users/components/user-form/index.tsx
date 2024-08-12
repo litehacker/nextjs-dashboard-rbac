@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/select";
 import Link from "next/link";
 import { FormWarning } from "../form-warning";
+import { AgencySelect } from "./agency-select";
+import { UserRoleSelect } from "./role-select/user-role-select";
 export const UserForm = () => {
   return (
     <div className="p-6 flex  flex-col gap-4 overflow-y-auto max-h-[500px]">
@@ -23,10 +25,10 @@ export const UserForm = () => {
           <Input id="name" name="name" placeholder="სახელი" required />
         </div>
         <div className="flex flex-col gap-1.5 w-full">
-          <Label htmlFor="nameENG">სახელი (ENG)</Label>
+          <Label htmlFor="name_eng">სახელი (ENG)</Label>
           <Input
-            id="nameENG"
-            name="nameENG"
+            id="name_eng"
+            name="name_eng"
             className="w-full"
             placeholder="სახელი ENG"
           />
@@ -34,16 +36,16 @@ export const UserForm = () => {
       </div>
       <div className="flex gap-6">
         <div className="flex flex-col gap-1.5 w-full">
-          <Label htmlFor="lastname">
+          <Label htmlFor="lastName">
             გვარი <span className="text-red-600">*</span>
           </Label>
-          <Input id="lastname" name="lastname" placeholder="გვარი" required />
+          <Input id="lastName" name="lastName" placeholder="გვარი" required />
         </div>
         <div className="flex flex-col gap-1.5 w-full">
-          <Label htmlFor="lastnameENG">გვარი (ENG)</Label>
+          <Label htmlFor="lastName_eng">გვარი (ENG)</Label>
           <Input
-            id="lastnameENG"
-            name="lastnameENG"
+            id="lastName_eng"
+            name="lastName_eng"
             placeholder="გვარი ENG"
             className="w-full"
           />
@@ -51,16 +53,16 @@ export const UserForm = () => {
       </div>
       <div className="flex gap-6">
         <div className="flex flex-col gap-1.5 w-full">
-          <Label htmlFor="id">
+          <Label htmlFor="pid">
             პირადი ნომერი <span className="text-red-600">*</span>
           </Label>
-          <Input id="id" name="id" placeholder="12345678909" required />
+          <Input id="pid" name="pid" placeholder="12345678909" required />
         </div>
 
         <div className="flex flex-col gap-1.5 w-full">
           <Label htmlFor="gender">სქესი</Label>
           <Select name="gender">
-            <SelectTrigger className="  " id="gender">
+            <SelectTrigger id="gender">
               <SelectValue placeholder="სქესი" />
             </SelectTrigger>
             <SelectContent>
@@ -76,44 +78,8 @@ export const UserForm = () => {
         </div>
       </div>
       <div className="flex gap-6">
-        <div className="flex flex-col gap-1.5 w-full">
-          <Label htmlFor="department">
-            უწყება <span className="text-red-600">*</span>
-          </Label>
-          <Select name="department" required>
-            <SelectTrigger id="department">
-              <SelectValue placeholder="უწყება" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>უწყება</SelectLabel>
-                <SelectItem value="male">მამრობითი</SelectItem>
-                <SelectItem value="female">მდედრობითი</SelectItem>
-                <SelectItem value="other">სხვა</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-        </div>
-
-        <div className="flex flex-col gap-1.5 w-full">
-          <Label htmlFor="role">
-            როლი <span className="text-red-600">*</span>
-          </Label>
-          <Select name="role" required>
-            <SelectTrigger id="role">
-              <SelectValue placeholder="როლი" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>როლი</SelectLabel>
-
-                <SelectItem value="male">მამრობითი</SelectItem>
-                <SelectItem value="female">მდედრობითი</SelectItem>
-                <SelectItem value="other">სხვა</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-        </div>
+        <AgencySelect />
+        <UserRoleSelect />
       </div>
       <div className="flex gap-6">
         <div className="flex flex-col gap-1.5 w-full">
@@ -129,10 +95,10 @@ export const UserForm = () => {
         </div>
 
         <div className="flex flex-col gap-1.5 w-full">
-          <Label htmlFor="positionENG">თანამდებობა (ENG)</Label>
+          <Label htmlFor="position_eng">თანამდებობა (ENG)</Label>
           <Input
-            id="positionENG"
-            name="positionENG"
+            id="position_eng"
+            name="position_eng"
             className="w-full"
             placeholder="თანამდებობა ENG"
           />

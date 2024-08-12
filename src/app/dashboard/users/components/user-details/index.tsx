@@ -24,7 +24,12 @@ export const UserDetails = async ({ id }: { id: string }) => {
       (permission) => permission.key === "update"
     ) ?? false;
 
-  let user: User | undefined = undefined;
+  let user:
+    | (User & {
+        pid?: string;
+        gender?: string;
+      })
+    | undefined = undefined;
 
   try {
     console.log("requesting: ", process.env.BASE_URL + "/api/v1/users/" + id);
@@ -83,11 +88,11 @@ export const UserDetails = async ({ id }: { id: string }) => {
         <div className="flex flex-col gap-2 p-4 mt-2 bg-gray-50 rounded-lg text-sm">
           <div className="flex items-center gap-2">
             <MaleIcon className="h-4 w-4" />
-            <span>უცნობი</span>
+            <span>{user?.gender}</span>
           </div>
           <div className="flex items-center gap-2">
             <IdCard className="h-4 w-4" />
-            <span>უცნობი</span>
+            <span>{user?.pid}</span>
           </div>
           <div className="flex items-center gap-2">
             <BuildingIcon className="h-4 w-4" />
