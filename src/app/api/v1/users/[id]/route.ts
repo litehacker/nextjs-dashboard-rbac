@@ -10,7 +10,6 @@ export async function GET(req: Request, { params }: any) {
   if (!Auth.success) {
     return response(Auth.message as string, false, Auth.status, null);
   }
-
   const { id } = params;
 
   try {

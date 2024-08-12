@@ -4,12 +4,18 @@ import Link from "next/link";
 import { SearchWrapper } from "./search";
 import { CircleX, SlidersHorizontal } from "lucide-react";
 
-export const Header = () => {
+export const Header = ({
+  hasAddUserPermission,
+}: {
+  hasAddUserPermission: boolean;
+}) => {
   return (
     <div className="flex flex-row gap-4 px-4 py-3 ">
-      <Link href="/dashboard/users/add?modal=true" replace>
-        <Button>დამატება</Button>
-      </Link>
+      {hasAddUserPermission && (
+        <Link href="/dashboard/users/add?modal=true" replace>
+          <Button>დამატება</Button>
+        </Link>
+      )}
       <form>
         <SearchWrapper>
           <button title="წაშლა" type="reset">

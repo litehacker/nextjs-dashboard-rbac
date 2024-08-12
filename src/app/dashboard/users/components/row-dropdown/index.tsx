@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { EllipsisVertical, Trash, User } from "lucide-react";
 import { ButtonLinkWrapper } from "./button-wrapper";
 
-export const RowDropdown = async () => {
+export const RowDropdown = async ({ id }: { id: string }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -24,7 +24,7 @@ export const RowDropdown = async () => {
         <DropdownMenuItem className="px-4 py-3">
           <ButtonLinkWrapper
             className="flex gap-3 w-full"
-            href="/dashboard/users/1"
+            href={"/dashboard/users/" + id}
           >
             <User color={"#323232"} />
             <span className="text-[#474747]">პროფილის ნახვა</span>

@@ -1,3 +1,4 @@
+"use server";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,8 +13,34 @@ import {
 } from "lucide-react";
 import { MaleIcon } from "./icons/male";
 import Link from "next/link";
+import { getAuthUser, getToken } from "@/lib/auth-check";
+import { User } from "@/interfaces/db.interfaces";
 
-export const UserDetails = async () => {
+export const UserDetails = async ({ id }: { id: string }) => {
+  const authUser = await getAuthUser();
+  const token = await getToken();
+  const hasEditUserPermission =
+    authUser.role.permissions.users?.some(
+      (permission) => permission.key === "edit"
+    ) ?? false;
+  let user: User | undefined = undefined;
+  try {
+    console.log("requesting: ", process.env.BASE_URL + "/api/v1/users/" + id);
+    const response = await fetch(process.env.BASE_URL + "/api/v1/users/" + id, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    if (response.ok) {
+      const internalResponseJSON = await response.json();
+      if (internalResponseJSON.success) {
+        user = internalResponseJSON.data[0];
+      }
+    }
+  } catch (e) {
+    console.error(e);
+  }
+
   return (
     <div className="max-w-md mx-auto p-4 bg-white rounded-lg shadow min-w-[380px]">
       <header className="flex items-center justify-between mb-4">
@@ -23,11 +50,15 @@ export const UserDetails = async () => {
           </Button>
         </Link>
         <h1 className="text-sm">მომხმარებლის დეტალები</h1>
-        <Link href="/dashboard/users/edit/1?modal=true">
-          <Button variant="ghost" size="icon">
-            <Pencil className="h-4 w-4" />
-          </Button>
-        </Link>
+        <div>
+          {hasEditUserPermission && (
+            <Link href="/dashboard/users/edit/1?modal=true">
+              <Button variant="ghost" size="icon">
+                <Pencil className="h-4 w-4" />
+              </Button>
+            </Link>
+          )}
+        </div>
       </header>
       <div className="flex items-center mb-4">
         <Avatar className="mr-4">
@@ -35,9 +66,11 @@ export const UserDetails = async () => {
           <AvatarFallback>GA</AvatarFallback>
         </Avatar>
         <div className="flex flex-col gap-2">
-          <h2 className="">გიორგი აბრამიშვილი</h2>
+          <h2 className="">
+            {user?.name} {user?.lastName}
+          </h2>
           <span className="flex w-fit px-4 py-1 rounded-full bg-[#F5F8FF] text-sm">
-            DEV
+            {user?.position}
           </span>
         </div>
       </div>
@@ -48,19 +81,19 @@ export const UserDetails = async () => {
         <div className="flex flex-col gap-2 p-4 mt-2 bg-gray-50 rounded-lg text-sm">
           <div className="flex items-center gap-2">
             <MaleIcon className="h-4 w-4" />
-            <span>მამრობიოტი</span>
+            <span>უცნობი</span>
           </div>
           <div className="flex items-center gap-2">
             <IdCard className="h-4 w-4" />
-            <span>00010110010</span>
+            <span>უცნობი</span>
           </div>
           <div className="flex items-center gap-2">
             <BuildingIcon className="h-4 w-4" />
-            <span>სისა ციფრული მმართველობის სასწავლო</span>
+            <span>{user?.agency}</span>
           </div>
           <div className="flex items-center gap-2">
             <BriefcaseIcon className="h-4 w-4" />
-            <span>დიზაინერი</span>
+            <span>{user?.position}</span>
           </div>
         </div>
       </section>
@@ -71,11 +104,11 @@ export const UserDetails = async () => {
         <div className="p-4 mt-2 bg-gray-50 rounded-lg">
           <div className="flex items-center mb-2">
             <MailIcon className="h-4 w-4 mr-2" />
-            <span>magari@mail.com</span>
+            <span>{user?.email}</span>
           </div>
           <div className="flex items-center">
             <PhoneIcon className="h-4 w-4 mr-2" />
-            <span>+995 505 00 00 01</span>
+            <span>{user?.phone}</span>
           </div>
         </div>
       </section>
