@@ -12,5 +12,5 @@ export default async function EditBookmarkPage({
 }) {
   const updateBookmarkWithId = updateBookmark.bind(null, id);
 
-  return <EditBookmarkForm action={updateBookmarkWithId} />;
+  return <EditBookmarkForm action={updateBookmarkWithId} id={id} />;
 }

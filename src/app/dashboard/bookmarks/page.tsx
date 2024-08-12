@@ -10,20 +10,59 @@ import {
 import { FolderCard } from "../components/folder-card";
 import { FilterBookmarks } from "../components/filter-bookmarks";
 import Link from "next/link";
+import { getAuthUser, getToken } from "@/lib/auth-check";
 
 export default async function Bookmarks() {
+  const user = await getAuthUser();
+  const token = await getToken();
+
+  const hasAddTabPermission =
+    user.role.permissions.tabs?.some(
+      (permission) => permission.key === "add"
+    ) ?? false;
+  const hasArchiveTabPermission =
+    user.role.permissions.tabs?.some(
+      (permission) => permission.key === "add_archive"
+    ) ?? false;
+  const hasEditPermission =
+    user.role.permissions.tabs?.some(
+      (permission) => permission.key === "edit"
+    ) ?? false;
+
+  const tabs = [];
+  try {
+    const response = await fetch(process.env.BASE_URL + "/api/v1/tabs", {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    if (response.ok) {
+      const internalResponseJSON = await response.json();
+      if (internalResponseJSON.success) {
+        const _tmpTabs = internalResponseJSON.data;
+        tabs.push(..._tmpTabs);
+      }
+    }
+  } catch (e) {
+    console.error("Error fetching tabs", e);
+  }
+
   return (
     <>
       <div className="flex items-center justify-between py-3 bg-white rounded-xl px-3 mb-3">
         <div className="flex space-x-4">
-          <Link href="/dashboard/bookmarks/add?modal=true" replace>
-            <Button variant="default" className="bg-primary text-white">
-              ახალი ჩანართი
-            </Button>
-          </Link>
-          <Link href="/dashboard/bookmarks/archive?modal=true" replace>
-            <Button variant="outline">არქივში დამატება</Button>
-          </Link>
+          {hasAddTabPermission && (
+            <Link href="/dashboard/bookmarks/add?modal=true" replace>
+              <Button variant="default" className="bg-primary text-white">
+                ახალი ჩანართი
+              </Button>
+            </Link>
+          )}
+          {hasArchiveTabPermission && (
+            <Link href="/dashboard/bookmarks/archive?modal=true" replace>
+              <Button variant="outline">არქივში დამატება</Button>
+            </Link>
+          )}
         </div>
         <Select>
           <SelectTrigger className="w-48">
@@ -38,8 +77,12 @@ export default async function Bookmarks() {
       <div className="flex gap-3">
         <FilterBookmarks />
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 w-full">
-          {Array.from({ length: 12 }).map((_, index) => (
-            <FolderCard key={index} />
+          {tabs.map((tab, index) => (
+            <FolderCard
+              key={index}
+              tab={tab}
+              hasEditPermission={hasEditPermission}
+            />
           ))}
         </div>
       </div>

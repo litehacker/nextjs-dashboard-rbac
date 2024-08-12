@@ -3,30 +3,17 @@ import Link from "next/link";
 import { DashboardHomeIcon } from "../icons/home";
 import { ReactNode, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Bookmark, Users, BriefcaseBusiness } from "lucide-react";
 import { usePathname } from "next/navigation";
-const navigation: {
-  title: string;
-  icon: ReactNode;
-  href: string;
-}[] = [
-  {
-    title: "ჩანართები",
-    icon: <Bookmark className="h-6 w-[60px] my-3" />,
-    href: "/dashboard/bookmarks",
-  },
-  {
-    title: "მომხმარებლები",
-    icon: <Users className="h-6 w-[60px] my-3" />,
-    href: "/dashboard/users",
-  },
-  {
-    title: "როლები",
-    icon: <BriefcaseBusiness className="h-6 w-[60px] my-3" />,
-    href: "/dashboard/roles",
-  },
-];
-export const DashboardNavigation = () => {
+
+export const DashboardNavigation = ({
+  navigation,
+}: {
+  navigation: {
+    title: string;
+    icon: ReactNode;
+    href: string;
+  }[];
+}) => {
   const pathname = usePathname();
   const [selected, setSelected] = useState(
     navigation.findIndex((item) => item.href === pathname)

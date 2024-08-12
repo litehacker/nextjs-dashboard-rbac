@@ -3,16 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import Link from "next/link";
+import { DocumentLevelInput } from "../document-level-input";
 
 export const CreateBookmarkForm = ({
   action,
@@ -27,42 +19,23 @@ export const CreateBookmarkForm = ({
         </h1>
         <section className="flex flex-col gap-4 p-6">
           <div className="flex flex-col gap-1.5">
-            <Label htmlFor="titleGeo" className="">
+            <Label htmlFor="name" className="">
               დასახელება (ქარ) *
             </Label>
             <Input
-              id="titleGeo"
-              name="titleGeo"
+              id="name"
+              name="name"
               placeholder="ჩაწერეთ სახელი"
               required
             />
           </div>
           <div className="flex flex-col gap-1.5">
-            <Label htmlFor="titleEng" className="block text-sm font-medium">
+            <Label htmlFor="name_eng" className="block text-sm font-medium">
               დასახელება (ENG)
             </Label>
-            <Input id="titleEng" name="titleEng" placeholder="ჩაწერეთ სახელი" />
+            <Input id="name_eng" name="name_eng" placeholder="ჩაწერეთ სახელი" />
           </div>
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="type" className="block text-sm font-medium">
-              დოკუმენტის დონე *
-            </Label>
-            <Select name="type" required>
-              <SelectTrigger className="  ">
-                <SelectValue placeholder="Select a fruit" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Fruits</SelectLabel>
-                  <SelectItem value="apple">Apple</SelectItem>
-                  <SelectItem value="banana">Banana</SelectItem>
-                  <SelectItem value="blueberry">Blueberry</SelectItem>
-                  <SelectItem value="grapes">Grapes</SelectItem>
-                  <SelectItem value="pineapple">Pineapple</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          </div>
+          <DocumentLevelInput />
         </section>
         <div className="flex justify-end p-4 border-t border-[#C9D0E1] gap-3">
           <Link href="/dashboard/bookmarks" replace>

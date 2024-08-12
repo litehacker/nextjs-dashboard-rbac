@@ -14,7 +14,7 @@ export default async function EditBookmarkPage({
 
   return (
     <Modal>
-      <EditBookmarkForm action={updateBookmarkWithId} />
+      <EditBookmarkForm action={updateBookmarkWithId} id={id} />
     </Modal>
   );
 }

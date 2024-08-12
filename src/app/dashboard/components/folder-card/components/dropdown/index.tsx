@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { EllipsisVertical, Pencil, Trash } from "lucide-react";
 import Link from "next/link";
 
-export const FolderDropdown = () => {
+export const FolderDropdown = ({ id }: { id: number }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -22,7 +22,7 @@ export const FolderDropdown = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[248px]" side="left">
         <DropdownMenuItem className="px-4 py-3">
-          <Link href="/dashboard/bookmarks/edit/1?modal=true" replace>
+          <Link href={`/dashboard/bookmarks/edit/${id}?modal=true`} replace>
             <div className="flex gap-3 w-full">
               <Pencil color={"#323232"} />
               <span className="text-[#474747]">ჩანართის რედაქტირება</span>
@@ -31,7 +31,7 @@ export const FolderDropdown = () => {
         </DropdownMenuItem>
         <Link href="/dashboard/bookmarks/delete/1?modal=true" replace>
           <DropdownMenuItem className="px-4 py-3">
-            <Link href="/dashboard/bookmarks/delete/1?modal=true">
+            <Link href={`/dashboard/bookmarks/delete/${id}?modal=true`}>
               <div className="flex gap-3 text-[#7A0000] w-full">
                 <Trash />
                 <span>ჩანართის წაშლა</span>

@@ -223,12 +223,13 @@
   },
   "tabs": [
     {
-      "name": "test",
-      "name_eng": "",
-      "name_code": "dsds",
-      "is_active": "false",
+      "name": "123123123",
+      "name_eng": "eeeNG",
+      "name_code": null,
+      "is_archive": null,
       "document_level_id": 1,
-      "updatedAt": "2024-07-31T13:29:54.350Z",
+      "valide_period": null,
+      "updatedAt": "2024-08-12T00:51:37.865Z",
       "id": 1
     },
     {
@@ -343,6 +344,17 @@
       "document_level_id": 1,
       "updatedAt": "2024-08-01T12:20:09.288Z",
       "id": 11
+    },
+    {
+      "name": " test 123123123",
+      "name_eng": "test 222",
+      "name_code": "IDOLB1NZGR",
+      "is_archive": null,
+      "document_level_id": 2,
+      "valide_period": null,
+      "updatedAt": "2024-08-12T00:32:16.746Z",
+      "createdAt": "2024-08-12T00:32:16.746Z",
+      "id": 12
     }
   ],
   "document_level": [
