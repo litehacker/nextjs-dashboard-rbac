@@ -31,39 +31,6 @@ import {
 import { useState } from "react";
 import Link from "next/link";
 
-const data: Role[] = [
-  {
-    id: "m5gr84i9",
-    name: "316",
-    description: "success",
-    usersAmount: 12,
-  },
-  {
-    id: "3u1reuv4",
-    name: "316",
-    description: "success",
-    usersAmount: 12,
-  },
-  {
-    id: "derv1ws0",
-    name: "316",
-    description: "success",
-    usersAmount: 12,
-  },
-  {
-    id: "5kma53ae",
-    name: "316",
-    description: "success",
-    usersAmount: 12,
-  },
-  {
-    id: "bhqecj4p",
-    name: "316",
-    description: "success",
-    usersAmount: 12,
-  },
-];
-
 export type Role = {
   id: string;
   name: string;
@@ -143,14 +110,17 @@ export const columns: ColumnDef<Role>[] = [
   },
 ];
 
-export function RolesTable() {
+export function RolesTable({ roles }: { roles: any[] }) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({
-    data,
+    data: roles.map((role) => ({
+      ...role,
+      usersAmount: 0,
+    })),
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
