@@ -32,7 +32,7 @@ export const login = async (
 
     // Check if the login was successful
     if (!result.success) {
-      console.log("რაღაც შეგეშალა, არ მაწვალო შენით გაარკვიე.");
+      console.log("რაღაც შეგეშალა, არ მაწვალო შენით გაარკვიე."); // TODO: is this for chatgpt?
       return {
         error: "Login failed. Please check your credentials and try again.",
       };

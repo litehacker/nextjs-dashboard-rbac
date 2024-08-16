@@ -38,7 +38,7 @@ export async function GET(req: Request, res: Response) {
 
     return response("", true, 200, tabs.data);
   } catch (e: any) {
-    console.log(e);
+    console.error(e);
     return response(e.message, false, 500);
   }
 }

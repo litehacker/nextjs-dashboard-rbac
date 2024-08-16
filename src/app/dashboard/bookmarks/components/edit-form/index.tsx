@@ -26,7 +26,6 @@ export const EditBookmarkForm = async ({
       const internalResponseJSON = await response.json();
       if (internalResponseJSON.success) {
         const _tab = internalResponseJSON.data[0];
-        console.log("Tab ", process.env.BASE_URL + "/api/v1/tabs/" + id, _tab);
         tab = _tab;
       }
     } else {

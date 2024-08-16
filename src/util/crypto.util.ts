@@ -50,14 +50,11 @@ export const verifyToken = async (
     const decoded: any = jwt.verify(token, secret);
 
     const role_id = decoded.role;
-    console.log(role_id, "role_id");
 
     if (!role_id) {
       return null;
     }
     const role = await axiosInstance.get(`roles?id=${role_id}`);
-
-    console.log(role?.data[0]);
 
     if (!role.data[0]) {
       return null;
@@ -65,18 +62,14 @@ export const verifyToken = async (
 
     let hasPermission = false;
 
-    console.log(typeof required_permission.permission);
-
     switch (typeof required_permission.permission) {
       case "object":
-        console.log(role.data[0].permissions[required_permission.module]);
         hasPermission = includesSome(
           role.data[0].permissions[required_permission.module],
           required_permission.permission
         );
         break;
       case "string":
-        console.log(role.data[0].permissions[required_permission.module]);
         hasPermission = role.data[0].permissions[
           required_permission.module
         ].includes(required_permission.permission);
@@ -86,7 +79,6 @@ export const verifyToken = async (
         hasPermission = role.data[0].permissions[
           required_permission.module
         ].includes(required_permission.permission);
-        console.log(hasPermission, "hasPermission");
         break;
     }
 

@@ -14,8 +14,6 @@ export async function GET(req: Request, res: Response) {
   try {
     const roles = await axiosInstance.get("roles");
 
-    console.log(roles.data);
-
     if (!roles.data) {
       return response("No role found", false, 404);
     }

@@ -56,7 +56,7 @@ export async function GET(req: Request) {
     });
     return response("", true, 200, users.data);
   } catch (e: any) {
-    console.log(e);
+    console.error(e);
     return response(e.message, false, 500);
   }
 }

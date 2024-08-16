@@ -5,6 +5,5 @@ export default async function UserDetailsPage({
 }: {
   params: { id: string };
 }) {
-  console.log({ userId: id });
   return <UserDetails id={id} />;
 }

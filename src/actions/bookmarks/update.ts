@@ -13,7 +13,6 @@ export const updateBookmark = async (id: string, formData: FormData) => {
     valide_period: formData.get("valide_period") as string,
     updatedAt: new Date(),
   };
-  console.log("Data", data);
 
   const response = await fetch(
     `${process.env.BASE_URL}/api/v1/tabs/edit/${id}`,
@@ -26,7 +25,7 @@ export const updateBookmark = async (id: string, formData: FormData) => {
     }
   );
   if (!response.ok) {
-    console.log("Failed to update bookmark", { response: response });
+    console.error("Failed to update bookmark", { response: response });
     throw new Error("Failed to update bookmark");
   }
 

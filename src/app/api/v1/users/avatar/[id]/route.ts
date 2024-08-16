@@ -43,7 +43,7 @@ export async function PUT(req: Request, { params }: any) {
   }
 
   try {
-    console.log("user", userId);
+    console.error("user", userId);
     const res = await axiosInstance.put(`users/${userId}`, user);
     return response("", true, 200, res.data);
   } catch (e: any) {

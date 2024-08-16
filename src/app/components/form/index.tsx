@@ -26,7 +26,7 @@ export const LoginFormWrapperClient = ({
     const formData = new FormData(event.currentTarget);
 
     try {
-      const authResult = await login(formData); // Pass formData to the login function
+      const authResult = await login(formData);
       if (authResult.error) {
         setFormState({
           message: "",

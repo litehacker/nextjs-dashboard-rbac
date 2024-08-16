@@ -4,7 +4,6 @@ import { getAuthUser, getToken } from "@/lib/auth-check";
 import { redirect, RedirectType } from "next/navigation";
 
 export const deleteUser = async (id: string, formData: FormData) => {
-  console.log("deleting", { id, formData: Object.fromEntries(formData) });
   const currentUser = await getAuthUser();
   // check that the users don't delete themselves
   if (Number(id) === currentUser?.id) {

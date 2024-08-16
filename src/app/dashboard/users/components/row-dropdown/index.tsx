@@ -30,7 +30,7 @@ export const RowDropdown = async ({
         <DropdownMenuItem className="px-4 py-3">
           <ButtonLinkWrapper
             className="flex gap-3 w-full"
-            href={"/dashboard/users/" + id}
+            href={"/dashboard/users/" + id} // open user profile
           >
             <User color={"#323232"} />
             <span className="text-[#474747]">პროფილის ნახვა</span>
@@ -39,7 +39,7 @@ export const RowDropdown = async ({
         {hasDeleteUserPermission && (
           <DropdownMenuItem className="px-4 py-3">
             <ButtonLinkWrapper
-              href={`/dashboard/users/delete/${id}?modal=true`}
+              href={`/dashboard/users/delete/${id}?modal=true`} // delete users
               className="flex gap-3 text-[#7A0000] w-full"
             >
               <Trash />

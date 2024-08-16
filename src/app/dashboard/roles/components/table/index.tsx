@@ -137,9 +137,7 @@ export function RolesTable({ roles }: { roles: any[] }) {
       rowSelection,
     },
   });
-  useEffect(() => {
-    console.log(roles);
-  }, [roles]);
+  useEffect(() => {}, [roles]);
   return (
     <div className="w-full">
       <div className="flex items-center py-4">
