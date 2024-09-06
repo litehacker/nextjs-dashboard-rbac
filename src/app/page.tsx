@@ -19,7 +19,7 @@ export default async function RootPage() {
   return (
     <div className="flex flex-col items-center min-h-screen">
       <header className="flex justify-between w-full p-4">
-        <div className="text-2xl font-bold">MY.GOV.GE</div>
+        <div className="text-2xl font-bold">DASHBOARD</div>
         <div className="flex items-center space-x-4">
           <Select>
             <SelectTrigger aria-label="Language">
@@ -47,7 +47,7 @@ export default async function RootPage() {
             <div className="flex flex-col text-center gap-2">
               <p className="text-sm font-medium">სახელი და პაროლი</p>
               <p className="text-sm text-muted-foreground">
-                ავტორიზაციისთვის გთხოვთ გაიაროთ იდენტიფიკაცია MY.GOV.GE-ის
+                ავტორიზაციისთვის გთხოვთ გაიაროთ იდენტიფიკაცია DASHBOARD-ის
                 ანგარიშით
               </p>
             </div>
