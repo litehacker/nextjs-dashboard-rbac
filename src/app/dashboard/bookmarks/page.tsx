@@ -11,19 +11,16 @@ import { FolderCard } from "../components/folder-card";
 import { FilterBookmarks } from "../components/filter-bookmarks";
 import Link from "next/link";
 import { getAuthUser, getToken } from "@/lib/auth-check";
-
-export default async function Bookmarks({
-  searchParams: { name, name_code, document_level_id },
-}: {
-  searchParams: {
-    name?: string;
-    name_code?: string;
-    document_level_id?: string;
-  };
-}) {
+type SearchParams = Promise<{
+  name?: string;
+  name_code?: string;
+  document_level_id?: string;
+}>;
+export default async function Bookmarks(props: { searchParams: SearchParams }) {
   const user = await getAuthUser();
   const token = await getToken();
-
+  const searchParams = await props.searchParams;
+  const { name, name_code, document_level_id } = searchParams;
   const hasAddTabPermission =
     user.role.permissions.tabs?.some(
       (permission) => permission.key === "add"
@@ -38,19 +35,20 @@ export default async function Bookmarks({
     ) ?? false;
 
   const tabs = [];
-  const searchParams = new URLSearchParams();
+  const newSearchParams = new URLSearchParams();
+
   if (name) {
-    searchParams.append("name", name);
+    newSearchParams.append("name", name);
   }
   if (name_code) {
-    searchParams.append("name_code", name_code);
+    newSearchParams.append("name_code", name_code);
   }
   if (document_level_id) {
-    searchParams.append("document_level_id", document_level_id);
+    newSearchParams.append("document_level_id", document_level_id);
   }
   try {
     const response = await fetch(
-      process.env.BASE_URL + "/api/v1/tabs?" + searchParams.toString(),
+      process.env.BASE_URL + "/api/v1/tabs?" + newSearchParams.toString(),
       {
         headers: {
           Authorization: "Bearer " + token,
