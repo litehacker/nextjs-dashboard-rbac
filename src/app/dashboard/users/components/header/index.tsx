@@ -4,7 +4,7 @@ import Link from "next/link";
 import { SearchWrapper } from "./search";
 import { CircleX, SlidersHorizontal } from "lucide-react";
 
-export const Header = ({
+export const Header = async ({
   hasAddUserPermission,
 }: {
   hasAddUserPermission: boolean;

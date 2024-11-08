@@ -7,7 +7,7 @@ import Link from "next/link";
 import BookmarkArchiveDate from "./date-input";
 import { DocumentLevelInput } from "../document-level-input";
 
-export const ArchiveBookmarkForm = ({
+export const ArchiveBookmarkForm = async ({
   action,
 }: {
   action: string | ((formData: FormData) => void) | undefined;

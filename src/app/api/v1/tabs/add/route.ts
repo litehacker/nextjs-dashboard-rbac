@@ -2,7 +2,7 @@ import authenticationHelper from "@/helper/authentication.helper";
 import { response } from "@/util/response.util";
 import { axiosInstance } from "../../../../../config/axios.config";
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   const Auth = await authenticationHelper.verifyRequest(req, {
     module: "tabs",
     permission: [1, 2],

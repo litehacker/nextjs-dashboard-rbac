@@ -1,21 +1,10 @@
 "use server";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import Link from "next/link";
 import { UserForm } from "../user-form";
 
-export const EditUserForm = ({
+export const EditUserForm = async ({
   action,
 }: {
   action: (formData: FormData) => Promise<never>;

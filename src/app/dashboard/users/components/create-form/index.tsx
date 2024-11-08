@@ -4,7 +4,7 @@ import Link from "next/link";
 import { UserForm } from "../user-form";
 import { Button } from "@/components/ui/button";
 
-export const CreateUserForm = ({
+export const CreateUserForm = async ({
   action,
 }: {
   action: string | ((formData: FormData) => void) | undefined;

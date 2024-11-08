@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { DocumentLevelInput } from "../document-level-input";
 
-export const CreateBookmarkForm = ({
+export const CreateBookmarkForm = async ({
   action,
 }: {
   action: string | ((formData: FormData) => void) | undefined;

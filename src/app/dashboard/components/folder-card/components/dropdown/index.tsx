@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { EllipsisVertical, Pencil, Trash } from "lucide-react";
 import Link from "next/link";
 
-export const FolderDropdown = ({ id }: { id: number }) => {
+export const FolderDropdown = async ({ id }: { id: number }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
