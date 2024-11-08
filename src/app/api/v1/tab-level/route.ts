@@ -2,7 +2,7 @@ import authenticationHelper from "@/helper/authentication.helper";
 import { axiosInstance } from "../../../../config/axios.config";
 import { response } from "@/util/response.util";
 
-export async function GET(req: Request, res: Response) {
+export async function GET(req: Request) {
   const Auth = await authenticationHelper.verifyRequest(req, {}, true);
   if (!Auth.success) {
     return response(Auth.message as string, false, Auth.status, null);

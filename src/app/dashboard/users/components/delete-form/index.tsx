@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Trash } from "lucide-react";
 import Link from "next/link";
 
-export const DeleteUserForm = ({
+export const DeleteUserForm = async ({
   action,
 }: {
   action: string | ((formData: FormData) => void) | undefined;

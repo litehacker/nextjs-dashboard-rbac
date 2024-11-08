@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { CircleAlertIcon, UsersIcon, X, XIcon } from "lucide-react";
 import Link from "next/link";
-export const DeleteRoleDialogForm = ({
+export const DeleteRoleDialogForm = async ({
   action,
 }: {
   action: string | ((formData: FormData) => void) | undefined;
